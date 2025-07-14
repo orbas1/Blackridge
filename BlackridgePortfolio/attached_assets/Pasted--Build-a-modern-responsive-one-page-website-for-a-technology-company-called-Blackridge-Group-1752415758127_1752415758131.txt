@@ -1,0 +1,73 @@
+
+
+Build a modern, responsive **one-page website** for a technology company called **Blackridge Group Ltd** using:
+
+- HTML5
+- Tailwind CSS (via CDN)
+- Google Fonts (use Inter or Poppins)
+- (Optional) AOS.js for basic scroll animation
+
+🧠 Purpose:
+This site introduces **Blackridge Group Ltd** as a future-focused UK tech company. It will highlight **Orbas** as the current flagship platform while leaving room to scale to more products later. The site will be **white-themed with light blue highlights**, optimized for both mobile and desktop.
+
+🎯 Design System:
+
+- **Background color:** `#FFFFFF` (white)
+- **Primary accent:** `#3B82F6` or `#60A5FA` (light blue)
+- **Header/Footer background:** white with slight shadow or border
+- **Font:** Inter or Poppins
+- **Button style:** Rounded, light blue with hover gradient
+- **Text color:** dark gray (`#1F2937`), light gray for secondary text (`#6B7280`)
+
+📐 Layout & Sections:
+
+1. ✅ **Sticky Header**
+   - Left: Logo or text: **Blackridge Group Ltd**
+   - Right nav: anchor links: [About] [Orbas] [Vision] [Contact]
+   - Font-bold, clean spacing, scrolls smoothly to each section
+
+2. ✅ **Hero Section**
+   - Centered content
+   - Heading:  
+     > “Building the Future of Digital Infrastructure”
+   - Subheading:  
+     > “We create ethical, scalable, and user-first platforms for the modern economy.”
+   - CTA Button:  
+     - Text: “Explore Orbas →”
+     - Link: `https://orbas.io`
+     - Tailwind: `bg-blue-500 text-white rounded-md px-6 py-3 hover:bg-blue-600 transition`
+
+3. ✅ **About Section** (`id="about"`)
+   - Title: “About Blackridge”
+   - Paragraph:
+     > “Blackridge Group Ltd is a UK-based technology company developing platform ecosystems that empower freelancers, creators, learners, and digital entrepreneurs. We believe in ethical tech, automation-first infrastructure, and global scale.”
+
+4. ✅ **Featured Brand: Orbas** (`id="orbas"`)
+   - Title: “Our Flagship Brand”
+   - Description:
+     > “Orbas is a unified digital ecosystem built for freelancers, employers, educators, and creators. With tools for work, learning, AI, and services, Orbas is redefining how people grow in the digital economy.”
+   - Button:  
+     - “Visit Orbas.io” → `https://orbas.io`
+   - Optional: grid or card format with brand highlights (e.g. [Work. Learn. Earn. Grow.])
+
+5. ✅ **Vision Section** (`id="vision"`)
+   - Quote-style block (centered):
+     > “We believe technology should empower—not exploit. Our mission is to build transparent, scalable platforms where opportunity flows to those who create it.”
+
+6. ✅ **Contact / Footer** (`id="contact"`)
+   - Email: `hello@blackridgegroup.com`
+   - Links: [Privacy Policy] [Terms of Use] [LinkedIn]
+   - Light gray top border (`border-t border-gray-200`)
+   - Footer text:  
+     > “© 2025 Blackridge Group Ltd. All rights reserved.”
+
+🖥️ Technical:
+- Tailwind via CDN (no build tools)
+- Font from Google Fonts (include `<link>` to Inter or Poppins)
+- Responsive and mobile-friendly (flex/column layout shifts)
+- Smooth scrolling for nav links
+- AOS.js or Tailwind’s `transition`, `opacity`, `translate` classes for light animation
+
+🎁 Output:
+- Single `index.html` file with everything inline and working
+- Ready to paste into Replit and deploy

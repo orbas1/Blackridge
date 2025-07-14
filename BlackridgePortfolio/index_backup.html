@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackridge Group Ltd - Transforming Digital Infrastructure</title>
+    <meta name="description" content="UK-based technology company developing platform ecosystems for freelancers, creators, learners, and digital entrepreneurs.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0EA5E9',
+                        'primary-light': '#38BDF8',
+                        'primary-dark': '#0284C7',
+                        'secondary': '#64748B',
+                        'accent': '#0EA5E9',
+                        'dark-gray': '#1F2937',
+                        'light-gray': '#64748B',
+                        'border-gray': '#E2E8F0'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.03) 0%, rgba(56, 189, 248, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 30px rgba(14, 165, 233, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            color: #0EA5E9;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(14, 165, 233, 0.1);
+            border-color: #0EA5E9;
+            transform: translateY(-1px);
+        }
+        
+        .card-enterprise {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-enterprise:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+        
+        .section-enterprise {
+            padding: 6rem 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .section-enterprise {
+                padding: 8rem 1.5rem;
+            }
+        }
+        
+        .icon-primary {
+            background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            transition: transform 0.6s ease;
+        }
+        
+        .hero-image-container:hover {
+            transform: translateY(-4px);
+        }
+        
+        .image-enterprise {
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px rgba(14, 165, 233, 0.2);
+            transition: all 0.6s ease;
+            overflow: hidden;
+        }
+        
+        .hero-title {
+            line-height: 1.2;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .section-enterprise {
+                padding: 3rem 1rem;
+            }
+            
+            .hero-bg {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            
+            .mobile-logo {
+                height: 2.5rem;
+            }
+            
+            .mobile-nav {
+                padding: 0.75rem 1rem;
+            }
+            
+            .mobile-icon {
+                width: 2rem;
+                height: 2rem;
+            }
+            
+            .mobile-text {
+                font-size: 0.875rem;
+            }
+            
+            .card-enterprise {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Tablet Optimizations */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .tablet-logo {
+                height: 3rem;
+            }
+            
+            .tablet-nav {
+                padding: 1rem 1.5rem;
+            }
+            
+            .tablet-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            
+            .section-enterprise {
+                padding: 4rem 1.5rem;
+            }
+        }
+        
+        .parallax-hero {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-overlap {
+            margin-top: -4rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        @media (min-width: 768px) {
+            .section-overlap {
+                margin-top: -6rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark-gray">
+    
+    <!-- Sticky Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border-gray">
+        <nav class="container mx-auto px-4 py-3 md:px-6 md:py-4 mobile-nav tablet-nav">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="assets/blackridge-logo.png" alt="Blackridge Group Ltd" class="h-14 w-auto md:h-12 lg:h-14 mobile-logo tablet-logo">
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#values" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Values</a>
+                    <a href="#orbas" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Orbas</a>
+                    <a href="#vision" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Vision</a>
+                    <a href="#contact" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Contact</a>
+                    <a href="https://orbas.io" target="_blank" rel="noopener noreferrer" 
+                       class="btn-secondary px-4 py-2 rounded-lg text-sm font-medium">
+                        Launch Orbas
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden flex flex-col space-y-1.5">
+                    <span class="w-6 h-0.5 bg-dark-gray transition-all duration-300"></span>
+                    <span class="w-6 h-0.5 bg-dark-gray transition-all duration-300"></span>
+                    <span class="w-6 h-0.5 bg-dark-gray transition-all duration-300"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-border-gray">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#about" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#values" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Values</a>
+                    <a href="#orbas" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Orbas</a>
+                    <a href="#vision" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Vision</a>
+                    <a href="#contact" class="text-sm font-medium text-secondary hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg flex items-center justify-center px-6 pt-24 pb-16">
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="text-2xl md:text-3xl lg:text-[3.5rem] font-bold text-dark-gray mb-6 hero-title">
+                        Transforming Digital<br>
+                        <span class="text-gradient">Infrastructure</span>
+                    </h1>
+                    <p class="text-sm md:text-base lg:text-lg text-light-gray mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        We build ethical, scalable platforms that empower freelancers, creators, and digital entrepreneurs to thrive in the modern economy.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://orbas.io" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn-primary text-white rounded-xl px-6 py-3 md:px-8 md:py-4 font-semibold text-sm md:text-base inline-flex items-center justify-center space-x-2 shadow-lg">
+                            <span>Explore Orbas</span>
+                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#about" 
+                           class="btn-secondary rounded-xl px-6 py-3 md:px-8 md:py-4 font-semibold text-sm md:text-base inline-flex items-center justify-center space-x-2">
+                            <span>Learn More</span>
+                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="lg:order-last parallax-hero" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="hero-image-container">
+                        <div class="image-enterprise relative overflow-hidden">
+                            <img src="assets/hero-image.jpg" alt="Digital Infrastructure Network" 
+                                 class="w-full h-auto object-cover transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-overlap section-enterprise bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="card-enterprise rounded-3xl p-8 md:p-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
+                        About Blackridge Group
+                    </h2>
+                    <p class="text-sm md:text-base lg:text-lg text-light-gray leading-relaxed max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        Blackridge Group Ltd is a UK-based technology company at the forefront of digital transformation. We develop comprehensive platform ecosystems that empower freelancers, creators, learners, and digital entrepreneurs to succeed in an increasingly connected world.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center">
+                        <div class="icon-primary w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 mobile-icon tablet-icon">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-dark-gray mb-2">Innovation First</h3>
+                        <p class="text-secondary">Pioneering solutions for tomorrow's challenges</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="icon-primary w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 mobile-icon tablet-icon">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-dark-gray mb-2">Ethical Technology</h3>
+                        <p class="text-secondary">Building transparent, trustworthy platforms</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="icon-primary w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 mobile-icon tablet-icon">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-dark-gray mb-2">Global Scale</h3>
+                        <p class="text-secondary">Connecting opportunities worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="section-enterprise bg-slate-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
+                    Our Core Values
+                </h2>
+                <p class="text-lg text-light-gray max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    These principles guide every decision we make and every solution we build.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card-enterprise rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start space-x-4">
+                        <div class="icon-primary w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-gray mb-3">User-Centric Design</h3>
+                            <p class="text-secondary leading-relaxed">Every feature we build starts with understanding real user needs and creating meaningful solutions that improve lives.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-enterprise rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start space-x-4">
+                        <div class="icon-primary w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-gray mb-3">Transparency</h3>
+                            <p class="text-secondary leading-relaxed">We believe in open communication, clear processes, and honest relationships with all our stakeholders.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-enterprise rounded-2xl p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start space-x-4">
+                        <div class="icon-primary w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-gray mb-3">Continuous Growth</h3>
+                            <p class="text-secondary leading-relaxed">We foster environments where individuals and communities can learn, adapt, and thrive in an ever-changing world.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-enterprise rounded-2xl p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start space-x-4">
+                        <div class="icon-primary w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-gray mb-3">Inclusive Communities</h3>
+                            <p class="text-secondary leading-relaxed">We build platforms that welcome diverse perspectives and create opportunities for everyone to succeed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orbas Section -->
+    <section id="orbas" class="section-enterprise bg-white">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Orbas Content -->
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="assets/orbas-logo.png" alt="Orbas" class="h-12 w-auto">
+                        <span class="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">5 Integrated Platforms</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark-gray mb-6">
+                        Five Platforms, One Ecosystem
+                    </h2>
+                    <p class="text-lg text-light-gray leading-relaxed mb-8">
+                        Orbas comprises five specialized platforms designed for every aspect of professional development. From freelancing and employment to education, AI assistance, and comprehensive services, each platform addresses specific professional use cases while working seamlessly together.
+                    </p>
+                    
+                    <!-- Platform Grid -->
+                    <div class="grid grid-cols-1 gap-4 mb-8">
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+                            <div class="icon-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark-gray block">Freelancing Platform</span>
+                                <span class="text-sm text-light-gray">Connect with clients and manage projects</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+                            <div class="icon-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.832 18.477 19.247 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark-gray block">Learning Platform</span>
+                                <span class="text-sm text-light-gray">Professional development and skill building</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+                            <div class="icon-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark-gray block">AI Assistant Platform</span>
+                                <span class="text-sm text-light-gray">Intelligent tools for productivity</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+                            <div class="icon-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark-gray block">Employment Platform</span>
+                                <span class="text-sm text-light-gray">Full-time career opportunities</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+                            <div class="icon-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-dark-gray block">Services Platform</span>
+                                <span class="text-sm text-light-gray">Comprehensive business services</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://orbas.io" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn-primary text-white rounded-xl px-8 py-4 font-semibold text-base inline-flex items-center space-x-2 shadow-lg">
+                        <span>Explore All Platforms</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Technology Image -->
+                <div data-aos="fade-right" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="hero-image-container">
+                        <div class="image-enterprise relative overflow-hidden">
+                            <img src="assets/tech-image.jpg" alt="Technology Infrastructure" 
+                                 class="w-full h-auto object-cover transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision" class="section-enterprise bg-slate-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
+                    Our Vision & Mission
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Vision -->
+                <div class="card-enterprise rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-gray mb-4">Our Vision</h3>
+                        <p class="text-lg text-light-gray leading-relaxed">
+                            To create a world where technology empowers every individual to reach their full potential, building transparent and scalable platforms where opportunity flows to those who create value.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Mission -->
+                <div class="card-enterprise rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-gray mb-4">Our Mission</h3>
+                        <p class="text-lg text-light-gray leading-relaxed">
+                            To develop ethical, automation-first infrastructure that connects global talent with meaningful opportunities, fostering sustainable growth for individuals and communities worldwide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quote -->
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
+                <blockquote class="text-xl md:text-2xl font-medium text-dark-gray italic leading-relaxed max-w-4xl mx-auto">
+                    "We believe technology should empower—not exploit. Our mission is to build transparent, scalable platforms where opportunity flows to those who create it."
+                </blockquote>
+                <div class="w-24 h-1 bg-primary mx-auto mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="section-enterprise bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
+                More Innovation Coming Soon
+            </h2>
+            <p class="text-lg text-light-gray mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We're continuously developing new platforms and tools to expand our ecosystem. Stay connected for upcoming announcements.
+            </p>
+            <div class="bg-slate-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center">
+                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-gray mb-2">Next Generation Platforms</h3>
+                    <p class="text-light-gray">Expanding beyond Orbas with revolutionary new tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="section-enterprise bg-slate-900 text-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
+                <!-- Company Info -->
+                <div data-aos="fade-up">
+                    <img src="assets/blackridge-logo.png" alt="Blackridge Group Ltd" class="h-10 w-auto mb-6 filter brightness-0 invert">
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Transforming digital infrastructure through ethical, scalable platforms that empower global communities.
+                    </p>
+                    <div class="space-y-2">
+                        <p class="text-sm text-slate-400">Registered Address:</p>
+                        <p class="text-slate-300">
+                            Blackridge Group Ltd<br>
+                            [Registration Address]<br>
+                            United Kingdom
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <nav class="space-y-3">
+                        <a href="#about" class="block text-slate-300 hover:text-white transition-colors">About Us</a>
+                        <a href="#values" class="block text-slate-300 hover:text-white transition-colors">Our Values</a>
+                        <a href="#vision" class="block text-slate-300 hover:text-white transition-colors">Vision & Mission</a>
+                        <a href="https://orbas.io" target="_blank" rel="noopener noreferrer" class="block text-slate-300 hover:text-white transition-colors">Orbas Platform</a>
+                        <a href="#" class="block text-slate-300 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="block text-slate-300 hover:text-white transition-colors">Terms of Service</a>
+                    </nav>
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-bold mb-6">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:info@blackridgegroup.online" class="text-slate-300 hover:text-white transition-colors">
+                                info@blackridgegroup.online
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary-light" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <a href="https://www.linkedin.com/company/blackridge-group-ltd/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-slate-700 pt-8 text-center" data-aos="fade-up" data-aos-delay="600">
+                <p class="text-slate-400 text-sm">
+                    © 2025 Blackridge Group Ltd. All rights reserved. | Company Registration: [UK Company Number]
+                </p>
+                <p class="text-slate-500 text-xs mt-2">
+                    This website uses cookies to enhance user experience. By continuing to browse, you agree to our Privacy Policy.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-hero');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Intersection Observer for section animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
