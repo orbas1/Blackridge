@@ -160,7 +160,13 @@
         }
         
         .hero-title {
-            line-height: 1.2;
+            line-height: 1.3;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-title {
+                line-height: 1.2;
+            }
         }
         
         /* Mobile Optimizations */
@@ -293,8 +299,8 @@
                 <!-- Hero Content -->
                 <div class="text-center lg:text-left" data-aos="fade-up" data-aos-duration="1000">
                     <h1 class="text-2xl md:text-3xl lg:text-[3.5rem] font-bold text-dark-gray mb-6 hero-title">
-                        Transforming Digital<br>
-                        <span class="text-gradient">Infrastructure</span>
+                        <span class="block lg:inline">Transforming Digital</span>
+                        <span class="block lg:inline text-gradient">Infrastructure</span>
                     </h1>
                     <p class="text-sm md:text-base lg:text-lg text-light-gray mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                         We build ethical, scalable platforms that empower freelancers, creators, and digital entrepreneurs to thrive in the modern economy.
