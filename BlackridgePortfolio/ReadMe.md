@@ -70,7 +70,7 @@ The website operates as a static presentation layer with the following data flow
 
 ### Asset Management
 - **Blackridge Logo**: `/assets/blackridge-logo.png` - Company branding
-- **Orbas Logo**: `/assets/orbas-logo.png` - Platform branding  
+- **Orbas Logo**: `https://i.ibb.co/7dRPCgrB/IMG-2726.jpg` - Platform branding  
 - **Hero Image**: `/assets/hero-image.jpg` - Professional technology network visualization
 - **Technology Image**: `/assets/tech-image.jpg` - Technical infrastructure imagery
 
