@@ -37,8 +37,8 @@
                         'soft-gray': '#9CA3AF',
                         'cool-gray': '#6B7280',
                         'divider': 'rgba(255,255,255,0.08)',
-                        'gilded': '#D4AF37',
-                        'gilded-soft': '#F5E6B3'
+                        'gilded': '#3B82F6',
+                        'gilded-soft': '#BAE6FD'
                     }
                 }
             }
@@ -48,9 +48,10 @@
     <style>
         :root {
             --crestgate-black: #050507;
-            --crestgate-gold-base: #d4af37;
-            --crestgate-gold-highlight: #f7e7a4;
-            --crestgate-gold-shadow: #7a5a18;
+            --hero-image-black: #06080B;
+            --crestgate-accent-base: #3b82f6;
+            --crestgate-accent-highlight: #93c5fd;
+            --crestgate-accent-shadow: #0b1f4b;
         }
 
         body {
@@ -68,14 +69,23 @@
             background: var(--crestgate-black);
         }
 
+        .hero-section-surface {
+            background: var(--hero-image-black);
+        }
+
         .global-surface::before {
             content: '';
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(circle at 12% 8%, rgba(217, 185, 87, 0.08), transparent 42%),
-                        radial-gradient(circle at 88% 12%, rgba(255, 232, 163, 0.05), transparent 48%);
+            background: radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.08), transparent 42%),
+                        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.05), transparent 48%);
             opacity: 0.5;
+        }
+
+        .hero-section-surface::before {
+            background: none;
+            opacity: 0;
         }
 
         .global-surface > * {
@@ -85,13 +95,13 @@
 
         .glass-card {
             background: rgba(17, 17, 24, 0.72);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
             backdrop-filter: blur(18px);
         }
 
         .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.24);
+            border-color: rgba(59, 130, 246, 0.24);
         }
 
         .scaffold-block,
@@ -99,7 +109,7 @@
         .scaffold-strip {
             position: relative;
             border-radius: 28px;
-            border: 1px dashed rgba(247, 231, 164, 0.35);
+            border: 1px dashed rgba(147, 197, 253, 0.35);
             min-height: 180px;
             display: flex;
             align-items: center;
@@ -130,7 +140,7 @@
         .scaffold-ribbon {
             position: absolute;
             inset: 0;
-            background: linear-gradient(120deg, rgba(255, 232, 163, 0.08), rgba(5, 5, 7, 0) 48%);
+            background: linear-gradient(120deg, rgba(96, 165, 250, 0.08), rgba(5, 5, 7, 0) 48%);
             mix-blend-mode: screen;
         }
 
@@ -138,7 +148,7 @@
             text-transform: uppercase;
             letter-spacing: 0.35em;
             font-size: 0.7rem;
-            color: rgba(247, 231, 164, 0.85);
+            color: rgba(147, 197, 253, 0.85);
         }
 
         .scaffold-block::after,
@@ -147,7 +157,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(255, 232, 163, 0.12), transparent 60%);
+            background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.12), transparent 60%);
             opacity: 0.65;
             pointer-events: none;
         }
@@ -158,7 +168,7 @@
             height: clamp(340px, 55vw, 580px);
             border-radius: 0;
             overflow: hidden;
-            background: #050507;
+            background: var(--hero-image-black);
             box-shadow: none;
         }
 
@@ -179,7 +189,7 @@
         .hero-metric {
             border-radius: 1.5rem;
             background: rgba(8, 8, 12, 0.9);
-            border: 1px solid rgba(247, 231, 164, 0.16);
+            border: 1px solid rgba(147, 197, 253, 0.16);
             padding: 1.5rem;
         }
 
@@ -189,7 +199,7 @@
             text-transform: uppercase;
             font-size: 0.55rem;
             margin-bottom: 0.65rem;
-            color: rgba(247, 231, 164, 0.8);
+            color: rgba(147, 197, 253, 0.8);
         }
 
         .hero-metric strong {
@@ -210,15 +220,15 @@
             width: 160px;
             height: 160px;
             transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(247, 231, 164, 0.35) 28%, rgba(247, 231, 164, 0) 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(147, 197, 253, 0.35) 28%, rgba(147, 197, 253, 0) 70%);
             opacity: 0;
             transition: opacity 0.35s ease;
             pointer-events: none;
             mix-blend-mode: screen;
         }
 
-        [data-gold-button],
-        [data-gold-outline] {
+        [data-accent-button],
+        [data-accent-outline] {
             position: relative;
             overflow: hidden;
             letter-spacing: 0.2em;
@@ -248,8 +258,8 @@
             aspect-ratio: 1 / 1;
             transform: translate(-50%, -50%);
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 244, 214, 0.95), rgba(217, 185, 87, 0.85) 55%, rgba(122, 90, 24, 0.75) 75%, rgba(5, 5, 7, 0.92));
-            box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.45), 0 35px 85px rgba(217, 185, 87, 0.35);
+            background: radial-gradient(circle at 30% 30%, rgba(224, 242, 254, 0.95), rgba(37, 99, 235, 0.85) 55%, rgba(11, 31, 75, 0.75) 75%, rgba(5, 5, 7, 0.92));
+            box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.45), 0 35px 85px rgba(37, 99, 235, 0.35);
             animation: orbPulse 12s ease-in-out infinite;
         }
 
@@ -259,7 +269,7 @@
             position: absolute;
             inset: -35%;
             border-radius: 50%;
-            border: 1px solid rgba(255, 232, 163, 0.22);
+            border: 1px solid rgba(96, 165, 250, 0.22);
             filter: blur(0.6px);
             animation: orbRing 18s linear infinite;
         }
@@ -268,7 +278,7 @@
             inset: -55%;
             animation-duration: 26s;
             animation-direction: reverse;
-            border-color: rgba(247, 231, 164, 0.12);
+            border-color: rgba(147, 197, 253, 0.12);
         }
 
         .orb-glare {
@@ -288,18 +298,18 @@
             position: absolute;
             inset: 12% 8%;
             border-radius: 50%;
-            border: 1px solid rgba(247, 231, 164, 0.08);
+            border: 1px solid rgba(147, 197, 253, 0.08);
             filter: blur(0.4px);
         }
 
         .orb-rail:nth-of-type(2) {
             inset: 22% 14%;
-            border-color: rgba(247, 231, 164, 0.14);
+            border-color: rgba(147, 197, 253, 0.14);
         }
 
         .orb-rail:nth-of-type(3) {
             inset: 33% 22%;
-            border-color: rgba(247, 231, 164, 0.2);
+            border-color: rgba(147, 197, 253, 0.2);
         }
 
         @keyframes orbPulse {
@@ -405,42 +415,28 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="section-crestone global-surface pt-32 pb-24 relative overflow-hidden">
+    <section class="section-crestone global-surface hero-section-surface pt-32 pb-24 relative overflow-hidden">
         <div class="container mx-auto max-w-7xl relative z-20">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <!-- Hero Content -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="lg:col-span-6 max-w-3xl">
                     <p class="text-gilded uppercase tracking-[0.55em] text-xs mb-5">Focused Tech Holdings</p>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold hero-title mb-6">
-                        Stewardship across three focused web portals.
+                        Three portals. One disciplined operator.
                     </h1>
                     <p class="text-lg text-soft-gray/90 mb-10 leading-relaxed">
-                        Crestgate runs three portals with a lean crew. We polish the experience, keep uptime tight, and move only when it adds value.
+                        Crestgate Holdings runs a tight portfolio of digital portals, pairing dependable infrastructure with measured product improvements that compound over time.
                     </p>
                     <div class="grid sm:flex sm:flex-wrap gap-4">
-                        <a href="#holdings" data-gold-button class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs shadow-lg">
-                            View Our Portals
+                        <a href="#holdings" data-accent-button class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs shadow-lg">
+                            Explore Holdings
                             <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"></path>
                             </svg>
                         </a>
-                        <a href="#contact" data-gold-outline class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs">
-                            Contact the Team
+                        <a href="#contact" data-accent-outline class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs">
+                            Connect With Us
                         </a>
-                    </div>
-                    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-soft-gray/80">
-                        <div class="hero-metric">
-                            <small>Active Holdings</small>
-                            <strong>Three portals live and maintained.</strong>
-                        </div>
-                        <div class="hero-metric">
-                            <small>Operating Model</small>
-                            <strong>Lean cadence, shared security, steady uptime.</strong>
-                        </div>
-                        <div class="hero-metric">
-                            <small>Headquarters</small>
-                            <strong>UK leadership with global reach.</strong>
-                        </div>
                     </div>
                 </div>
 
@@ -827,9 +823,18 @@
             }
         });
 
+        const HERO_IMAGE_SOURCE = 'https://i.ibb.co/zTyTb4zw/tech-hero-nobg.png';
+        const HERO_FALLBACK_COLOR = '#06080B';
+
         function createHeroVisual() {
             const heroVisual = document.getElementById('hero-visual');
             if (!heroVisual) return;
+
+            const rootStyles = getComputedStyle(document.documentElement);
+            const heroSurfaceColorRaw = rootStyles.getPropertyValue('--hero-image-black');
+            const heroSurfaceColor = (heroSurfaceColorRaw && heroSurfaceColorRaw.trim()) || HERO_FALLBACK_COLOR;
+
+            heroVisual.style.backgroundColor = heroSurfaceColor;
 
             const svgNS = 'http://www.w3.org/2000/svg';
             const xlinkNS = 'http://www.w3.org/1999/xlink';
@@ -848,10 +853,10 @@
             softLight.setAttribute('x2', '100%');
             softLight.setAttribute('y2', '0%');
             [
-                { offset: '0%', color: '#050507', opacity: '0.0' },
+                { offset: '0%', color: heroSurfaceColor, opacity: '0.0' },
                 { offset: '35%', color: '#1A1A1F', opacity: '0.25' },
                 { offset: '70%', color: '#1A1A1F', opacity: '0.15' },
-                { offset: '100%', color: '#050507', opacity: '0.0' }
+                { offset: '100%', color: heroSurfaceColor, opacity: '0.0' }
             ].forEach(stopData => {
                 const stop = document.createElementNS(svgNS, 'stop');
                 stop.setAttribute('offset', stopData.offset);
@@ -866,13 +871,13 @@
             const background = document.createElementNS(svgNS, 'rect');
             background.setAttribute('width', '1600');
             background.setAttribute('height', '1100');
-            background.setAttribute('fill', '#050507');
+            background.setAttribute('fill', heroSurfaceColor);
 
             const heroImage = document.createElementNS(svgNS, 'image');
             heroImage.setAttribute('width', '1600');
             heroImage.setAttribute('height', '1100');
-            heroImage.setAttributeNS(xlinkNS, 'href', 'https://i.ibb.co/cKs64tcz/black-image.png');
-            heroImage.setAttribute('href', 'https://i.ibb.co/cKs64tcz/black-image.png');
+            heroImage.setAttributeNS(xlinkNS, 'href', HERO_IMAGE_SOURCE);
+            heroImage.setAttribute('href', HERO_IMAGE_SOURCE);
             heroImage.setAttribute('preserveAspectRatio', 'xMidYMid slice');
             heroImage.setAttribute('style', 'mix-blend-mode: normal;');
 
@@ -889,44 +894,104 @@
             heroVisual.appendChild(svg);
         }
 
+        function deriveHeroColorFromImage(imageUrl, fallbackColor) {
+            return new Promise(resolve => {
+                const image = new Image();
+                let settled = false;
+
+                const resolveWithColor = color => {
+                    if (!settled) {
+                        settled = true;
+                        resolve(color || fallbackColor);
+                    }
+                };
+
+                image.crossOrigin = 'anonymous';
+                image.onload = () => {
+                    try {
+                        const sampleSize = 32;
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        const width = Math.min(sampleSize, image.naturalWidth || image.width);
+                        const height = Math.min(sampleSize, image.naturalHeight || image.height);
+                        canvas.width = width;
+                        canvas.height = height;
+                        context.drawImage(image, 0, 0, width, height);
+                        const data = context.getImageData(0, 0, width, height).data;
+                        let r = 0;
+                        let g = 0;
+                        let b = 0;
+                        let count = 0;
+                        for (let i = 0; i < data.length; i += 4) {
+                            r += data[i];
+                            g += data[i + 1];
+                            b += data[i + 2];
+                            count++;
+                        }
+                        if (count === 0) {
+                            resolveWithColor(fallbackColor);
+                            return;
+                        }
+                        const toHex = value => value.toString(16).padStart(2, '0');
+                        const color = `#${toHex(Math.round(r / count))}${toHex(Math.round(g / count))}${toHex(Math.round(b / count))}`;
+                        resolveWithColor(color);
+                    } catch (error) {
+                        resolveWithColor(fallbackColor);
+                    }
+                };
+
+                image.onerror = () => resolveWithColor(fallbackColor);
+                image.crossOrigin = 'anonymous';
+                image.src = imageUrl;
+
+                setTimeout(() => resolveWithColor(fallbackColor), 4000);
+            });
+        }
+
+        async function syncHeroSurfaceColor() {
+            const resolvedColor = await deriveHeroColorFromImage(HERO_IMAGE_SOURCE, HERO_FALLBACK_COLOR);
+            document.documentElement.style.setProperty('--hero-image-black', resolvedColor);
+            return resolvedColor;
+        }
+
         function applyPremiumStyling() {
             const palette = {
-                base: '#D9B957',
-                highlight: '#FFE8A3',
-                shadow: '#7A5A18'
+                base: '#3B82F6',
+                highlight: '#93C5FD',
+                shadow: '#0B1F4B'
             };
 
             const root = document.documentElement;
-            root.style.setProperty('--crestgate-gold-base', palette.base);
-            root.style.setProperty('--crestgate-gold-highlight', palette.highlight);
-            root.style.setProperty('--crestgate-gold-shadow', palette.shadow);
+            root.style.setProperty('--crestgate-accent-base', palette.base);
+            root.style.setProperty('--crestgate-accent-highlight', palette.highlight);
+            root.style.setProperty('--crestgate-accent-shadow', palette.shadow);
 
             const header = document.querySelector('header');
             if (header) {
                 header.style.background = 'linear-gradient(135deg, rgba(5, 5, 7, 0.95), rgba(10, 10, 14, 0.78))';
-                header.style.borderBottom = '1px solid rgba(255, 232, 163, 0.18)';
+                header.style.borderBottom = '1px solid rgba(96, 165, 250, 0.18)';
                 header.style.boxShadow = '0 25px 65px rgba(0, 0, 0, 0.65)';
             }
 
             const footer = document.querySelector('footer');
             if (footer) {
                 footer.style.background = 'linear-gradient(160deg, rgba(5, 5, 7, 0.95), rgba(14, 12, 8, 0.78))';
-                footer.style.borderTop = '1px solid rgba(255, 232, 163, 0.18)';
+                footer.style.borderTop = '1px solid rgba(96, 165, 250, 0.18)';
                 footer.style.boxShadow = '0 -20px 65px rgba(0, 0, 0, 0.6)';
             }
 
             document.querySelectorAll('.glass-card').forEach(card => {
-                card.style.border = '1px solid rgba(255, 232, 163, 0.18)';
+                card.style.border = '1px solid rgba(96, 165, 250, 0.18)';
                 card.style.boxShadow = '0 45px 95px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)';
                 card.style.background = 'linear-gradient(145deg, rgba(17, 17, 24, 0.88), rgba(17, 17, 24, 0.62))';
             });
 
             document.querySelectorAll('.scaffold-block, .scaffold-panel, .scaffold-strip').forEach(scaffold => {
-                scaffold.style.borderColor = 'rgba(255, 232, 163, 0.38)';
+                scaffold.style.borderColor = 'rgba(96, 165, 250, 0.38)';
                 scaffold.style.boxShadow = '0 28px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)';
             });
 
-            document.querySelectorAll('[data-gold-button]').forEach(button => {
+            document.querySelectorAll('[data-accent-button]').forEach(button => {
                 if (!button.querySelector('.premium-shine')) {
                     const shine = document.createElement('span');
                     shine.className = 'premium-shine';
@@ -936,8 +1001,8 @@
                 button.style.background = `linear-gradient(135deg, ${palette.highlight}, ${palette.base} 55%, ${palette.shadow})`;
                 button.style.color = '#050507';
                 button.style.borderRadius = '9999px';
-                button.style.border = '1px solid rgba(255, 236, 179, 0.65)';
-                button.style.boxShadow = '0 25px 60px rgba(217, 185, 87, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.45)';
+                button.style.border = '1px solid rgba(186, 230, 253, 0.65)';
+                button.style.boxShadow = '0 25px 60px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.45)';
                 button.style.transition = 'all 0.45s ease';
                 button.addEventListener('mousemove', event => {
                     const rect = button.getBoundingClientRect();
@@ -950,20 +1015,20 @@
                 });
             });
 
-            document.querySelectorAll('[data-gold-outline]').forEach(button => {
+            document.querySelectorAll('[data-accent-outline]').forEach(button => {
                 if (!button.querySelector('.premium-shine')) {
                     const shine = document.createElement('span');
                     shine.className = 'premium-shine';
                     button.appendChild(shine);
                 }
                 const shineEl = button.querySelector('.premium-shine');
-                button.style.border = '1px solid rgba(255, 232, 163, 0.45)';
+                button.style.border = '1px solid rgba(96, 165, 250, 0.45)';
                 button.style.color = palette.highlight;
                 button.style.backdropFilter = 'blur(6px)';
-                button.style.boxShadow = '0 18px 48px rgba(122, 90, 24, 0.35)';
+                button.style.boxShadow = '0 18px 48px rgba(11, 31, 75, 0.35)';
                 button.style.transition = 'all 0.4s ease';
                 button.addEventListener('mouseenter', () => {
-                    button.style.background = 'linear-gradient(135deg, rgba(255, 232, 163, 0.08), rgba(122, 90, 24, 0.25))';
+                    button.style.background = 'linear-gradient(135deg, rgba(96, 165, 250, 0.08), rgba(11, 31, 75, 0.25))';
                 });
                 button.addEventListener('mouseleave', () => {
                     button.style.background = 'transparent';
@@ -978,7 +1043,7 @@
             });
 
             document.querySelectorAll('.text-gilded').forEach(el => {
-                el.style.textShadow = '0 0 18px rgba(247, 231, 164, 0.45)';
+                el.style.textShadow = '0 0 18px rgba(147, 197, 253, 0.45)';
             });
         }
 
@@ -994,8 +1059,8 @@
 
             function createBackgroundGradient() {
                 backgroundGradient = ctx.createRadialGradient(width * 0.75, height * 0.35, 0, width * 0.75, height * 0.35, Math.max(width, height));
-                backgroundGradient.addColorStop(0, 'rgba(255, 236, 179, 0.18)');
-                backgroundGradient.addColorStop(0.45, 'rgba(217, 185, 87, 0.15)');
+                backgroundGradient.addColorStop(0, 'rgba(186, 230, 253, 0.18)');
+                backgroundGradient.addColorStop(0.45, 'rgba(37, 99, 235, 0.15)');
                 backgroundGradient.addColorStop(1, 'rgba(5, 5, 7, 0)');
             }
 
@@ -1044,8 +1109,8 @@
                     wrapNode(node);
 
                     const glow = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 14);
-                    glow.addColorStop(0, 'rgba(255, 248, 220, 0.95)');
-                    glow.addColorStop(0.35, 'rgba(255, 232, 163, 0.55)');
+                    glow.addColorStop(0, 'rgba(224, 242, 254, 0.95)');
+                    glow.addColorStop(0.35, 'rgba(96, 165, 250, 0.55)');
                     glow.addColorStop(1, 'rgba(5, 5, 7, 0)');
                     ctx.beginPath();
                     ctx.fillStyle = glow;
@@ -1054,7 +1119,7 @@
 
                     ctx.beginPath();
                     ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(255, 232, 163, 0.9)';
+                    ctx.fillStyle = 'rgba(96, 165, 250, 0.9)';
                     ctx.fill();
 
                     for (let j = i + 1; j < nodes.length; j++) {
@@ -1063,8 +1128,8 @@
                         if (dist < 160) {
                             const alpha = 1 - dist / 160;
                             const lineGradient = ctx.createLinearGradient(node.x, node.y, other.x, other.y);
-                            lineGradient.addColorStop(0, `rgba(255, 232, 163, ${alpha * 0.8})`);
-                            lineGradient.addColorStop(1, `rgba(122, 90, 24, ${alpha * 0.55})`);
+                            lineGradient.addColorStop(0, `rgba(96, 165, 250, ${alpha * 0.8})`);
+                            lineGradient.addColorStop(1, `rgba(11, 31, 75, ${alpha * 0.55})`);
                             ctx.strokeStyle = lineGradient;
                             ctx.lineWidth = 0.6 + alpha * 1.1;
                             ctx.beginPath();
@@ -1077,7 +1142,7 @@
                     if (Math.random() < 0.002) {
                         const sparkle = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 18);
                         sparkle.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
-                        sparkle.addColorStop(0.4, 'rgba(255, 232, 163, 0.5)');
+                        sparkle.addColorStop(0.4, 'rgba(96, 165, 250, 0.5)');
                         sparkle.addColorStop(1, 'rgba(5, 5, 7, 0)');
                         ctx.fillStyle = sparkle;
                         ctx.beginPath();
@@ -1095,7 +1160,12 @@
             window.addEventListener('resize', initCanvas);
         }
 
-        createHeroVisual();
+        syncHeroSurfaceColor()
+            .then(() => createHeroVisual())
+            .catch(() => {
+                document.documentElement.style.setProperty('--hero-image-black', HERO_FALLBACK_COLOR);
+                createHeroVisual();
+            });
         applyPremiumStyling();
         initNetwork();
     </script>
