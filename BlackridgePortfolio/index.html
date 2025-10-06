@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackridge Group Ltd - Transforming Digital Infrastructure</title>
-    <meta name="description" content="UK-based technology company developing platform ecosystems for freelancers, creators, learners, and digital entrepreneurs.">
+    <title>Crestgate Holdings &mdash; Tech-Focused Investment Holdings Company</title>
+    <meta name="description" content="Crestgate Holdings is a technology-focused holdings company building and investing in high-potential brands, digital platforms, and emerging technologies.">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+
     <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Custom Configuration -->
     <script>
         tailwind.config = {
@@ -29,693 +29,762 @@
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#0EA5E9',
-                        'primary-light': '#38BDF8',
-                        'primary-dark': '#0284C7',
-                        'secondary': '#64748B',
-                        'dark-gray': '#1F2937',
-                        'light-gray': '#6B7280',
-                        'border-gray': '#E5E7EB',
-                        'bg-light': '#F8FAFC'
+                        'rich-black': '#050507',
+                        'obsidian': '#09090F',
+                        'onyx': '#111118',
+                        'slate-void': '#1B1B24',
+                        'graphite': '#23232E',
+                        'soft-gray': '#9CA3AF',
+                        'cool-gray': '#6B7280',
+                        'divider': 'rgba(255,255,255,0.08)',
+                        'gilded': '#D4AF37',
+                        'gilded-soft': '#F5E6B3'
                     }
                 }
             }
         }
     </script>
-    
+
     <style>
+        :root {
+            --crestgate-black: #050507;
+            --crestgate-gold-base: #d4af37;
+            --crestgate-gold-highlight: #f7e7a4;
+            --crestgate-gold-shadow: #7a5a18;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
+            background: var(--crestgate-black);
+            color: #F9FAFB;
         }
-        
-        .section-enterprise {
-            padding: 5rem 2rem;
+
+        .section-crestone {
+            padding: 5rem 1.5rem;
         }
-        
-        .section-overlap {
-            margin-top: -4rem;
+
+        .global-surface {
             position: relative;
-            z-index: 10;
+            background: var(--crestgate-black);
         }
-        
-        .hero-bg {
-            background: radial-gradient(circle at 30% 30%, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0.05) 40%, transparent 70%),
-                        radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.15) 0%, transparent 60%),
-                        #f0f9ff;
+
+        .global-surface::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 12% 8%, rgba(217, 185, 87, 0.08), transparent 42%),
+                        radial-gradient(circle at 88% 12%, rgba(255, 232, 163, 0.05), transparent 48%);
+            opacity: 0.5;
+        }
+
+        .global-surface > * {
             position: relative;
+            z-index: 1;
+        }
+
+        .glass-card {
+            background: rgba(17, 17, 24, 0.72);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(18px);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.24);
+        }
+
+        .scaffold-block,
+        .scaffold-panel,
+        .scaffold-strip {
+            position: relative;
+            border-radius: 28px;
+            border: 1px dashed rgba(247, 231, 164, 0.35);
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(17, 17, 24, 0.7), rgba(17, 17, 24, 0.35));
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 22px 60px rgba(0, 0, 0, 0.45);
             overflow: hidden;
         }
-        
-        .hero-bg::before {
+
+        .scaffold-panel {
+            min-height: 260px;
+        }
+
+        .scaffold-strip {
+            min-height: 120px;
+            border-radius: 22px;
+        }
+
+        .scaffold-stack {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scaffold-stack .scaffold-strip {
+            background: linear-gradient(135deg, rgba(17, 17, 24, 0.78), rgba(17, 17, 24, 0.4));
+        }
+
+        .scaffold-ribbon {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 232, 163, 0.08), rgba(5, 5, 7, 0) 48%);
+            mix-blend-mode: screen;
+        }
+
+        .scaffold-label {
+            text-transform: uppercase;
+            letter-spacing: 0.35em;
+            font-size: 0.7rem;
+            color: rgba(247, 231, 164, 0.85);
+        }
+
+        .scaffold-block::after,
+        .scaffold-panel::after,
+        .scaffold-strip::after {
             content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 232, 163, 0.12), transparent 60%);
+            opacity: 0.65;
+            pointer-events: none;
+        }
+
+        #hero-visual {
+            position: relative;
+            width: 100%;
+            height: clamp(340px, 55vw, 580px);
+            border-radius: 0;
+            overflow: hidden;
+            background: #050507;
+            box-shadow: none;
+        }
+
+        #hero-visual svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-stat-layer {
+            position: absolute;
+            inset: auto 1.75rem 1.75rem 1.75rem;
+            display: none;
+        }
+
+        .hero-metric {
+            border-radius: 1.5rem;
+            background: rgba(8, 8, 12, 0.9);
+            border: 1px solid rgba(247, 231, 164, 0.16);
+            padding: 1.5rem;
+        }
+
+        .hero-metric small {
+            display: block;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            font-size: 0.55rem;
+            margin-bottom: 0.65rem;
+            color: rgba(247, 231, 164, 0.8);
+        }
+
+        .hero-metric strong {
+            display: block;
+            font-size: 1rem;
+            color: rgba(236, 236, 241, 0.9);
+        }
+
+        .hero-title {
+            line-height: 1.15;
+            text-shadow: 0 22px 55px rgba(0, 0, 0, 0.7);
+        }
+
+        .premium-shine {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
-            z-index: 1;
-        }
-        
-        .card-enterprise {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(14, 165, 233, 0.15);
-            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.1);
-            color: #1f2937;
+            width: 160px;
+            height: 160px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(247, 231, 164, 0.35) 28%, rgba(247, 231, 164, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+            mix-blend-mode: screen;
         }
 
-        .card-enterprise h2,
-        .card-enterprise h3,
-        .card-enterprise h4 {
-            color: #1f2937;
-        }
-
-        .card-enterprise .text-secondary,
-        .card-enterprise .text-light-gray {
-            color: #64748b;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
-            transition: all 0.3s ease;
-            border: none;
+        [data-gold-button],
+        [data-gold-outline] {
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+            letter-spacing: 0.2em;
         }
-        
-        .btn-primary::before {
-            content: '';
+
+        .constellation-frame {
+            position: relative;
+            border-radius: 32px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(8, 8, 12, 0.95), rgba(5, 5, 8, 0.75));
+            box-shadow: 0 45px 110px rgba(0, 0, 0, 0.6);
+            min-height: clamp(320px, 55vh, 520px);
+        }
+
+        #constellation-canvas {
             position: absolute;
-            top: 0;
-            left: -100%;
+            inset: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
-        }
-        
-        .btn-secondary {
-            background: rgba(14, 165, 233, 0.1);
-            color: #0EA5E9;
-            border: 2px solid #0EA5E9;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
-        }
-        
-        .btn-secondary:hover {
-            background: #0EA5E9;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
-        }
-        
-        .icon-primary {
-            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .icon-primary:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-image-container {
-            position: relative;
-            transition: transform 0.6s ease;
-        }
-        
-        .hero-image-container:hover {
-            transform: translateY(-4px);
-        }
-        
-        .image-enterprise {
-            border-radius: 2rem;
-            box-shadow: 0 25px 50px rgba(14, 165, 233, 0.2);
-            transition: all 0.6s ease;
-            overflow: hidden;
-        }
-        
-        .hero-title {
-            line-height: 1.3;
         }
 
-        @media (min-width: 1024px) {
-            .hero-title {
-                line-height: 1.2;
+        .orb-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: clamp(180px, 38%, 260px);
+            aspect-ratio: 1 / 1;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 244, 214, 0.95), rgba(217, 185, 87, 0.85) 55%, rgba(122, 90, 24, 0.75) 75%, rgba(5, 5, 7, 0.92));
+            box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.45), 0 35px 85px rgba(217, 185, 87, 0.35);
+            animation: orbPulse 12s ease-in-out infinite;
+        }
+
+        .orb-core::before,
+        .orb-core::after {
+            content: '';
+            position: absolute;
+            inset: -35%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 232, 163, 0.22);
+            filter: blur(0.6px);
+            animation: orbRing 18s linear infinite;
+        }
+
+        .orb-core::after {
+            inset: -55%;
+            animation-duration: 26s;
+            animation-direction: reverse;
+            border-color: rgba(247, 231, 164, 0.12);
+        }
+
+        .orb-glare {
+            position: absolute;
+            top: 8%;
+            left: 16%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.0) 70%);
+            mix-blend-mode: screen;
+            filter: blur(12px);
+            opacity: 0.7;
+            animation: glareSweep 9s ease-in-out infinite;
+        }
+
+        .orb-rail {
+            position: absolute;
+            inset: 12% 8%;
+            border-radius: 50%;
+            border: 1px solid rgba(247, 231, 164, 0.08);
+            filter: blur(0.4px);
+        }
+
+        .orb-rail:nth-of-type(2) {
+            inset: 22% 14%;
+            border-color: rgba(247, 231, 164, 0.14);
+        }
+
+        .orb-rail:nth-of-type(3) {
+            inset: 33% 22%;
+            border-color: rgba(247, 231, 164, 0.2);
+        }
+
+        @keyframes orbPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
             }
         }
-        
-        /* Mobile Optimizations */
+
+        @keyframes orbRing {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes glareSweep {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate3d(14%, 18%, 0) scale(1.2);
+                opacity: 0.9;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-stat-layer {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
-            .section-enterprise {
-                padding: 3rem 1rem;
+            .section-crestone {
+                padding: 3.5rem 1.25rem;
             }
-            
-            .hero-bg {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-            
-            .mobile-logo {
-                height: 2.5rem;
-            }
-            
-            .mobile-nav {
-                padding: 0.75rem 1rem;
-            }
-            
-            .mobile-icon {
-                width: 2rem;
-                height: 2rem;
-            }
-            
-            .mobile-text {
-                font-size: 0.875rem;
-            }
-            
-            .card-enterprise {
-                padding: 1.5rem;
+
+            #hero-visual {
+                height: clamp(260px, 68vw, 420px);
+                border-radius: 24px;
             }
         }
-        
-        /* Tablet Optimizations */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .tablet-logo {
-                height: 3rem;
-            }
-            
-            .tablet-nav {
-                padding: 1rem 1.5rem;
-            }
-            
-            .tablet-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-            }
-            
-            .section-enterprise {
-                padding: 4rem 1.5rem;
-            }
-        }
-        
-        /* Smooth scroll */
+
         html {
             scroll-behavior: smooth;
         }
-        
-        /* Animation classes */
-        .animate-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Parallax effect */
-        .parallax-hero {
-            transition: transform 0.1s ease-out;
-        }
     </style>
 </head>
-<body class="bg-white text-dark-gray">
-    
+<body class="text-white">
+
     <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border-gray">
-        <nav class="container mx-auto px-4 py-3 md:px-6 md:py-4 mobile-nav tablet-nav">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-onyx/85 backdrop-blur-xl border-b border-divider">
+        <nav class="container mx-auto max-w-7xl px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo Placeholder -->
                 <div class="flex items-center space-x-3">
-                    <img src="assets/blackridge-logo.png" alt="Blackridge Group Ltd" class="h-14 w-auto md:h-12 lg:h-14 mobile-logo tablet-logo">
+                    <div class="h-11 w-11 rounded-full border border-gilded/60 bg-gradient-to-br from-gilded/20 via-gilded/5 to-transparent flex items-center justify-center">
+                        <span class="text-gilded text-xl font-semibold">C</span>
+                    </div>
+                    <div>
+                        <span class="block text-sm tracking-[0.4em] uppercase text-gilded">Crestgate</span>
+                        <span class="block text-lg font-semibold text-white">Holdings</span>
+                    </div>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-dark-gray hover:text-primary transition-colors font-medium">About</a>
-                    <a href="#values" class="text-dark-gray hover:text-primary transition-colors font-medium">Values</a>
-                    <a href="#orbas" class="text-dark-gray hover:text-primary transition-colors font-medium">Orbas</a>
-                    <a href="#vision" class="text-dark-gray hover:text-primary transition-colors font-medium">Vision</a>
-                    <a href="#contact" class="text-dark-gray hover:text-primary transition-colors font-medium">Contact</a>
-                    <a href="privacy.html" class="text-dark-gray hover:text-primary transition-colors font-medium">Privacy</a>
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-soft-gray hover:text-gilded transition-colors">About</a>
+                    <a href="#holdings" class="text-soft-gray hover:text-gilded transition-colors">Holdings</a>
+                    <a href="#constellation" class="text-soft-gray hover:text-gilded transition-colors">Constellation</a>
+                    <a href="#values" class="text-soft-gray hover:text-gilded transition-colors">Values</a>
+                    <a href="#culture" class="text-soft-gray hover:text-gilded transition-colors">Culture</a>
+                    <a href="#mission" class="text-soft-gray hover:text-gilded transition-colors">Mission</a>
+                    <a href="privacy.html" class="text-soft-gray hover:text-gilded transition-colors">Privacy</a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-dark-gray hover:text-primary">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-button" class="lg:hidden text-gilded focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
-            
+
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-border-gray">
-                <div class="flex flex-col space-y-3 pt-4">
-                    <a href="#about" class="text-dark-gray hover:text-primary transition-colors font-medium">About</a>
-                    <a href="#values" class="text-dark-gray hover:text-primary transition-colors font-medium">Values</a>
-                    <a href="#orbas" class="text-dark-gray hover:text-primary transition-colors font-medium">Orbas</a>
-                    <a href="#vision" class="text-dark-gray hover:text-primary transition-colors font-medium">Vision</a>
-                    <a href="#contact" class="text-dark-gray hover:text-primary transition-colors font-medium">Contact</a>
-                    <a href="privacy.html" class="text-dark-gray hover:text-primary transition-colors font-medium">Privacy</a>
+            <div id="mobile-menu" class="hidden lg:hidden mt-6 border-t border-divider pt-4">
+                <div class="flex flex-col space-y-4 text-sm font-medium">
+                    <a href="#about" class="text-soft-gray hover:text-gilded transition-colors">About</a>
+                    <a href="#holdings" class="text-soft-gray hover:text-gilded transition-colors">Holdings</a>
+                    <a href="#constellation" class="text-soft-gray hover:text-gilded transition-colors">Constellation</a>
+                    <a href="#values" class="text-soft-gray hover:text-gilded transition-colors">Values</a>
+                    <a href="#culture" class="text-soft-gray hover:text-gilded transition-colors">Culture</a>
+                    <a href="#mission" class="text-soft-gray hover:text-gilded transition-colors">Mission</a>
+                    <a href="privacy.html" class="text-soft-gray hover:text-gilded transition-colors">Privacy</a>
                 </div>
             </div>
         </nav>
     </header>
-    
+
     <!-- Hero Section -->
-    <section class="hero-bg section-enterprise pt-24 pb-16 lg:pb-24">
-        <canvas id="network-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
-        <div class="container mx-auto max-w-7xl relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+    <section class="section-crestone global-surface pt-32 pb-24 relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl relative z-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <!-- Hero Content -->
-                <div class="text-center lg:text-left" data-aos="fade-up" data-aos-duration="1000">
-                    <h1 class="text-2xl md:text-3xl lg:text-[3.5rem] font-bold text-dark-gray mb-6 hero-title">
-                        <span class="block lg:inline">Transforming Digital</span>
-                        <span class="block lg:inline text-gradient">Infrastructure</span>
+                <div data-aos="fade-up" data-aos-duration="1000" class="lg:col-span-6 max-w-3xl">
+                    <p class="text-gilded uppercase tracking-[0.55em] text-xs mb-5">Focused Tech Holdings</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold hero-title mb-6">
+                        Stewardship across three focused web portals.
                     </h1>
-                    <p class="text-sm md:text-base lg:text-lg text-secondary mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        We build ethical, scalable platforms that empower freelancers, creators, and digital entrepreneurs to thrive in the modern economy.
+                    <p class="text-lg text-soft-gray/90 mb-10 leading-relaxed">
+                        Crestgate runs three portals with a lean crew. We polish the experience, keep uptime tight, and move only when it adds value.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="https://orbas.io" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="btn-primary text-white rounded-xl px-6 py-3 md:px-8 md:py-4 font-semibold text-sm md:text-base inline-flex items-center justify-center space-x-2 shadow-lg">
-                            <span>Explore Orbas</span>
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    <div class="grid sm:flex sm:flex-wrap gap-4">
+                        <a href="#holdings" data-gold-button class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs shadow-lg">
+                            View Our Portals
+                            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"></path>
                             </svg>
                         </a>
-                        <a href="#about" 
-                           class="btn-secondary rounded-xl px-6 py-3 md:px-8 md:py-4 font-semibold text-sm md:text-base inline-flex items-center justify-center space-x-2">
-                            <span>Learn More</span>
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                            </svg>
+                        <a href="#contact" data-gold-outline class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs">
+                            Contact the Team
                         </a>
                     </div>
-                </div>
-                
-                <!-- Hero Image -->
-                <div class="lg:order-last parallax-hero" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
-                    <div class="hero-image-container">
-                        <div class="image-enterprise relative overflow-hidden">
-                            <img src="assets/hero-image.jpg" alt="Digital Infrastructure Network" 
-                                 class="w-full h-auto object-cover transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent"></div>
+                    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-soft-gray/80">
+                        <div class="hero-metric">
+                            <small>Active Holdings</small>
+                            <strong>Three portals live and maintained.</strong>
+                        </div>
+                        <div class="hero-metric">
+                            <small>Operating Model</small>
+                            <strong>Lean cadence, shared security, steady uptime.</strong>
+                        </div>
+                        <div class="hero-metric">
+                            <small>Headquarters</small>
+                            <strong>UK leadership with global reach.</strong>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="section-overlap section-enterprise bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <div class="card-enterprise rounded-3xl p-8 md:p-12">
-                <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
-                        About Blackridge Group
-                    </h2>
-                    <p class="text-sm md:text-base lg:text-lg text-light-gray leading-relaxed max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                        Blackridge Group Ltd is a UK-based technology company at the forefront of digital transformation. We develop comprehensive platform ecosystems that empower freelancers, creators, learners, and digital entrepreneurs to succeed in an increasingly connected world.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-center">
-                        <div class="icon-primary w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 mobile-icon tablet-icon">
-                            <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold text-dark-gray mb-2">Innovation First</h3>
-                        <p class="text-secondary">Pioneering solutions for tomorrow's challenges</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="icon-primary w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 mobile-icon tablet-icon">
-                            <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold text-dark-gray mb-2">Ethical Technology</h3>
-                        <p class="text-secondary">Building transparent, trustworthy platforms</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="icon-primary w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 mobile-icon tablet-icon">
-                            <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 919-9"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg md:text-xl font-bold text-dark-gray mb-2">Global Scale</h3>
-                        <p class="text-secondary">Connecting opportunities worldwide</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Values Section -->
-    <section id="values" class="section-enterprise bg-bg-light">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
-                    Our Core Values
-                </h2>
-                <p class="text-lg text-light-gray max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    The principles that guide our mission to transform digital infrastructure and empower global communities.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-4">Community First</h3>
-                    <p class="text-secondary leading-relaxed">We believe in building platforms that serve communities, not the other way around. Every decision prioritizes user empowerment and collective success.</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-4">Transparency</h3>
-                    <p class="text-secondary leading-relaxed">Open communication, clear policies, and honest practices form the foundation of trust between our platforms and users worldwide.</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-4">Innovation</h3>
-                    <p class="text-secondary leading-relaxed">We continuously push boundaries to create solutions that didn't exist before, solving real problems with cutting-edge technology.</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-4">Sustainability</h3>
-                    <p class="text-secondary leading-relaxed">Building for the long term means creating sustainable business models that benefit creators, users, and society as a whole.</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="500">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-4">Quality</h3>
-                    <p class="text-secondary leading-relaxed">Excellence in every detail, from user experience to platform performance, ensuring our solutions exceed expectations consistently.</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="600">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-4">Accessibility</h3>
-                    <p class="text-secondary leading-relaxed">Creating inclusive platforms that work for everyone, regardless of location, background, or technical expertise.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Orbas Platform Section -->
-    <section id="orbas" class="section-enterprise bg-white">
-        <div class="container mx-auto max-w-7xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Orbas Content -->
-                <div data-aos="fade-up" data-aos-duration="1000">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://i.ibb.co/7dRPCgrB/IMG-2726.jpg" alt="Orbas" class="h-12 w-auto">
-                        <h2 class="text-3xl md:text-4xl font-bold text-dark-gray">
-                            Our Flagship Platform
-                        </h2>
-                    </div>
-                    <p class="text-lg text-light-gray leading-relaxed mb-8">
-                        Orbas represents Four platforms encompassing all professional use cases, designed to revolutionize how freelancers, creators, and digital entrepreneurs connect, collaborate, and thrive in the modern economy.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-start space-x-3">
-                            <div class="icon-primary w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-dark-gray mb-1">Creator Hub</h3>
-                                <p class="text-secondary text-sm">Showcase and monetize content</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <div class="icon-primary w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-dark-gray mb-1">Learning Platform</h3>
-                                <p class="text-secondary text-sm">Continuous skill development</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <div class="icon-primary w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-dark-gray mb-1">Business Tools</h3>
-                                <p class="text-secondary text-sm">Complete business management</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <div class="icon-primary w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-dark-gray mb-1">Community Network</h3>
-                                <p class="text-secondary text-sm">Professional networking</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://orbas.io" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="btn-primary text-white rounded-xl px-8 py-4 font-semibold text-base inline-flex items-center space-x-2 shadow-lg">
-                        <span>Explore Orbas Platform</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <!-- Technology Image -->
-                <div data-aos="fade-right" data-aos-duration="1200" data-aos-delay="300">
-                    <div class="hero-image-container">
-                        <div class="image-enterprise relative overflow-hidden">
-                            <img src="assets/tech-image.jpg" alt="Technology Infrastructure" 
-                                 class="w-full h-auto object-cover transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Vision & Mission Section -->
-    <section id="vision" class="section-enterprise bg-bg-light">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Vision Card -->
-                <div class="card-enterprise rounded-3xl p-8 md:p-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-dark-gray mb-6">Our Vision</h3>
-                    <p class="text-light-gray leading-relaxed">
-                        To create a world where digital infrastructure serves humanity's potential, enabling every individual to contribute their unique talents to a globally connected economy. We envision platforms that eliminate barriers, foster collaboration, and democratize access to opportunities regardless of geographic location or background.
-                    </p>
-                </div>
-                
-                <!-- Mission Card -->
-                <div class="card-enterprise rounded-3xl p-8 md:p-12" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-dark-gray mb-6">Our Mission</h3>
-                    <p class="text-light-gray leading-relaxed">
-                        To build comprehensive, ethical platform ecosystems that empower freelancers, creators, learners, and digital entrepreneurs to thrive. We develop technology that prioritizes community success, transparent practices, and sustainable growth, creating lasting value for all stakeholders in the digital economy.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Coming Soon Section -->
-    <section class="section-enterprise bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-gray mb-6" data-aos="fade-up">
-                    What's Coming Next
-                </h2>
-                <p class="text-lg text-light-gray max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    Our roadmap includes revolutionary new platforms designed to further transform the digital landscape.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-2">AI-Powered Matching</h3>
-                    <p class="text-light-gray">Advanced algorithms connecting perfect project matches</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-2">Global Expansion</h3>
-                    <p class="text-light-gray">Localized platforms for emerging markets worldwide</p>
-                </div>
-                
-                <div class="card-enterprise rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-primary w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-gray mb-2">Next Generation Platforms</h3>
-                    <p class="text-light-gray">Expanding beyond Orbas with revolutionary new tools</p>
+
+                <!-- Hero Visual -->
+                <div class="lg:col-span-6 relative" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="250">
+                    <div id="hero-visual" class="relative"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Holdings Overview -->
+    <section id="holdings" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-gilded uppercase tracking-[0.5em] text-xs mb-4">Our Portfolio</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white">Three portals, each with a clear role.</h2>
+                <p class="mt-4 text-soft-gray max-w-2xl mx-auto">
+                    Light stacks, regular audits, and a single design system keep the trio consistent.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="50">
+                    <p class="text-gilded uppercase tracking-[0.35em] text-xs mb-3">Portal 01</p>
+                    <h3 class="text-xl font-semibold text-white mb-3">Immersive Insights</h3>
+                    <p class="text-soft-gray text-sm">Weekly editorial hub covering VR and mixed reality signals.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="120">
+                    <p class="text-gilded uppercase tracking-[0.35em] text-xs mb-3">Portal 02</p>
+                    <h3 class="text-xl font-semibold text-white mb-3">Builder Hub</h3>
+                    <p class="text-soft-gray text-sm">Resource centre with docs, updates, and support for builders.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-gilded uppercase tracking-[0.35em] text-xs mb-3">Portal 03</p>
+                    <h3 class="text-xl font-semibold text-white mb-3">Client Access</h3>
+                    <p class="text-soft-gray text-sm">Secure dashboards for clients, investors, and project comms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Constellation Showcase -->
+    <section id="constellation" class="section-crestone global-surface border-t border-divider relative overflow-hidden">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <p class="text-gilded uppercase tracking-[0.5em] text-xs">Crestgate Constellation</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-white">The network behind our three portals.</h2>
+                    <p class="text-soft-gray text-lg leading-relaxed">
+                        Shared ops keep each site patched, monitored, and on brand.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-soft-gray/85">
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-gilded uppercase tracking-[0.45em] text-xs mb-3">Shared Ops</p>
+                            <p>Centralised hosting, observability, and response playbooks for each rollout.</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-6">
+                            <p class="text-gilded uppercase tracking-[0.45em] text-xs mb-3">Content Cadence</p>
+                            <p>Coordinated windows so releases land smoothly across the trio.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-soft-gray/80">
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 inline-block h-2 w-2 rounded-full bg-gilded"></span>
+                            <span>Node clusters brighten when focus shifts to a specific portal.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 inline-block h-2 w-2 rounded-full bg-gilded"></span>
+                            <span>Orbital rings represent the shared design and compliance checks.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 inline-block h-2 w-2 rounded-full bg-gilded"></span>
+                            <span>The core orb keeps uptime, access, and data standards aligned.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="constellation-frame" data-aos="fade-left" data-aos-delay="200">
+                    <canvas id="constellation-canvas"></canvas>
+                    <div class="orb-core"></div>
+                    <div class="orb-glare"></div>
+                    <span class="orb-rail"></span>
+                    <span class="orb-rail"></span>
+                    <span class="orb-rail"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-gilded">About Crestgate Holdings</h2>
+                    <p class="text-soft-gray text-lg leading-relaxed">
+                        We are a UK holdings company dedicated to three technology-led portals. The brief: dependable, polished, and ready for the next release.
+                    </p>
+                    <p class="text-soft-gray leading-relaxed">
+                        A compact leadership team handles governance, tooling, and vendor ties so the portals stay focused on their users.
+                    </p>
+                </div>
+                <div class="glass-card rounded-3xl p-10" data-aos="fade-left" data-aos-delay="200">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gilded/15 border border-gilded/40 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Multi-Sector Technology Expertise</h3>
+                                <p class="text-soft-gray">Experience across SaaS, AI, XR, and digital media keeps the trio current.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gilded/15 border border-gilded/40 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M5 6h14M7 2h10M9 18l3 3 3-3m-3 3V10"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Governance &amp; Operational Discipline</h3>
+                                <p class="text-soft-gray">Straightforward governance keeps decision-making quick and accountable.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-gilded/15 border border-gilded/40 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 1.343-3 3v7h6v-7c0-1.657-1.343-3-3-3z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 21h14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Purpose-Driven Capital</h3>
+                                <p class="text-soft-gray">We invest with restraint, backing changes that improve the user experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section id="values" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-gilded uppercase tracking-[0.5em] text-xs">Values</p>
+                <h2 class="text-3xl md:text-4xl font-semibold">Principles that Shape Crestgate</h2>
+                <p class="mt-4 text-soft-gray max-w-3xl mx-auto">These values keep the three holdings aligned with the Crestgate ethos.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card rounded-3xl p-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Integrity</h3>
+                    <p class="text-soft-gray text-sm">We operate with transparency and keep reporting straightforward.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Innovation</h3>
+                    <p class="text-soft-gray text-sm">We invest in useful technology, not hype.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Stewardship</h3>
+                    <p class="text-soft-gray text-sm">We look after the portals with long-term stability in mind.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">Collaboration</h3>
+                    <p class="text-soft-gray text-sm">We work closely with contributors, designers, and clients to keep standards high.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture & Values -->
+    <section id="culture" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <p class="text-gilded uppercase tracking-[0.5em] text-xs">Culture &amp; People</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-6">Culture &amp; Values in Action</h2>
+                    <p class="text-soft-gray leading-relaxed mb-6">
+                        The crew stays small and focused on quality. Every release gets peer review and a user-first lens.
+                    </p>
+                    <ul class="space-y-4 text-soft-gray">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-gilded mt-1">&#9679;</span>
+                            <span>Shared tooling sessions line up content, development, and compliance.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-gilded mt-1">&#9679;</span>
+                            <span>Weekly standups surface issues fast and keep response times low.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-gilded mt-1">&#9679;</span>
+                            <span>Budget for learning keeps the crew current on accessibility, security, and design.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative" data-aos="fade-left" data-aos-delay="200">
+                    <div class="rounded-[2.5rem] overflow-hidden border border-gilded/20">
+                        <img src="https://i.ibb.co/cKs64tcz/black-image.png" alt="Immersive collaboration" class="w-full h-full object-cover opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-rich-black via-transparent to-rich-black/95"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section id="mission" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-5xl text-center" data-aos="fade-up">
+            <p class="text-gilded uppercase tracking-[0.5em] text-xs">Mission Statement</p>
+            <h2 class="text-3xl md:text-4xl font-semibold mt-4">Mission</h2>
+            <p class="text-soft-gray text-lg leading-relaxed mt-6">
+                Grow three portals with intent, support inclusive experiences, and release responsibly.
+            </p>
+        </div>
+    </section>
+
+    <!-- Future Roadmap Scaffold -->
+    <section id="roadmap" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-gilded uppercase tracking-[0.5em] text-xs">Roadmap Scaffold</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white">Reserved slots for upcoming notes.</h2>
+                <p class="mt-4 text-soft-gray max-w-3xl mx-auto">These placeholders hold space for future release details.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="scaffold-block" data-aos="fade-up" data-aos-delay="50">
+                    <span class="scaffold-label">Portal Release Slot</span>
+                </div>
+                <div class="scaffold-block" data-aos="fade-up" data-aos-delay="120">
+                    <span class="scaffold-label">Partner Update Slot</span>
+                </div>
+                <div class="scaffold-block" data-aos="fade-up" data-aos-delay="200">
+                    <span class="scaffold-label">Ops Checklist Slot</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Scaffold -->
+    <section id="insights" class="section-crestone global-surface border-t border-divider">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-gilded uppercase tracking-[0.5em] text-xs">Insights Scaffold</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white">Placeholders for future stories.</h2>
+                <p class="mt-4 text-soft-gray max-w-2xl mx-auto">Ready-made panels for insights once content is locked.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="scaffold-panel" data-aos="fade-right">
+                    <div class="scaffold-ribbon"></div>
+                    <span class="scaffold-label">Feature Story Placeholder</span>
+                </div>
+                <div class="scaffold-stack space-y-4" data-aos="fade-left" data-aos-delay="150">
+                    <div class="scaffold-strip">
+                        <span class="scaffold-label">Metric Snapshot Placeholder</span>
+                    </div>
+                    <div class="scaffold-strip">
+                        <span class="scaffold-label">Stakeholder Quote Placeholder</span>
+                    </div>
+                    <div class="scaffold-strip">
+                        <span class="scaffold-label">Timeline Placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact & Footer Section -->
-    <footer id="contact" class="section-enterprise bg-bg-light text-dark-gray">
+    <footer id="contact" class="section-crestone global-surface border-t border-divider">
         <div class="container mx-auto max-w-6xl">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
                 <!-- Company Info -->
                 <div data-aos="fade-up">
-                    <img src="assets/blackridge-logo.png" alt="Blackridge Group Ltd" class="h-10 w-auto mb-6">
-                    <p class="text-secondary leading-relaxed mb-6">
-                        Transforming digital infrastructure through ethical, scalable platforms that empower global communities.
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="h-11 w-11 rounded-full border border-gilded/60 bg-gradient-to-br from-gilded/20 via-gilded/5 to-transparent flex items-center justify-center">
+                            <span class="text-gilded text-xl font-semibold">C</span>
+                        </div>
+                        <div>
+                            <span class="block text-sm tracking-[0.4em] uppercase text-gilded">Crestgate</span>
+                            <span class="block text-lg font-semibold text-white">Holdings</span>
+                        </div>
+                    </div>
+                    <p class="text-soft-gray leading-relaxed mb-6">
+                        Crestgate Holdings looks after three future-focused web portals that blend technology, creativity, and practical use.
                     </p>
-                    <div class="space-y-2">
-                        <p class="text-sm text-light-gray">Registered Address:</p>
-                        <p class="text-secondary">
+                    <div class="space-y-2 text-soft-gray text-sm">
+                        <p class="uppercase tracking-[0.3em] text-gilded text-xs">Registered Address</p>
+                        <p>
                             61 Bridge Street<br>
-                            Kington<br>
-                            Hertfordshire<br>
+                            Kington, Hertfordshire<br>
                             HR5 3DJ<br>
                             United Kingdom
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
-                    <nav class="space-y-3">
-                        <a href="#about" class="block text-secondary hover:text-primary transition-colors">About Us</a>
-                        <a href="#values" class="block text-secondary hover:text-primary transition-colors">Our Values</a>
-                        <a href="#vision" class="block text-secondary hover:text-primary transition-colors">Vision & Mission</a>
-                        <a href="https://orbas.io" target="_blank" rel="noopener noreferrer" class="block text-secondary hover:text-primary transition-colors">Orbas Platform</a>
-                        <a href="privacy.html" class="block text-secondary hover:text-primary transition-colors">Privacy Policy</a>
-                        <a href="#" class="block text-secondary hover:text-primary transition-colors">Terms of Service</a>
+                    <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
+                    <nav class="space-y-3 text-soft-gray text-sm">
+                        <a href="#about" class="block hover:text-gilded transition-colors">About Us</a>
+                        <a href="#holdings" class="block hover:text-gilded transition-colors">Holdings</a>
+                        <a href="#constellation" class="block hover:text-gilded transition-colors">Constellation</a>
+                        <a href="#values" class="block hover:text-gilded transition-colors">Values</a>
+                        <a href="#culture" class="block hover:text-gilded transition-colors">Culture</a>
+                        <a href="#mission" class="block hover:text-gilded transition-colors">Mission Statement</a>
+                        <a href="#roadmap" class="block hover:text-gilded transition-colors">Roadmap Scaffold</a>
+                        <a href="#insights" class="block hover:text-gilded transition-colors">Insights Scaffold</a>
+                        <a href="privacy.html" class="block hover:text-gilded transition-colors">Privacy Policy</a>
                     </nav>
+                    <div class="mt-8 text-soft-gray text-sm">
+                        <h4 class="text-white font-semibold mb-2">ESG &amp; CSR</h4>
+                        <p>Low-energy hosting, accessible design, and community partnerships are standard practice across every Crestgate release.</p>
+                    </div>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="text-xl font-bold mb-6">Get In Touch</h3>
-                    <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-white mb-6">Contact</h3>
+                    <div class="space-y-4 text-soft-gray text-sm">
                         <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            <svg class="w-5 h-5 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <a href="mailto:info@blackridgegroup.online" class="text-secondary hover:text-primary transition-colors">
-                                info@blackridgegroup.online
-                            </a>
+                            <a href="mailto:info@crestgateholdings.com" class="hover:text-gilded transition-colors">info@crestgateholdings.com</a>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary-light" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <svg class="w-5 h-5 text-gilded" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003zM7.118 21.5H3.554V9.001h3.564V21.5zM5.336 7.433a2.065 2.065 0 110-4.13 2.065 2.065 0 010 4.13zm16.114 14.067h-3.553v-5.585c0-1.332-.027-3.046-1.857-3.046-1.858 0-2.143 1.45-2.143 2.948v5.683h-3.553V9.001h3.41v1.706h.048c.475-.9 1.638-1.855 3.37-1.855 3.6 0 4.278 2.372 4.278 5.457v6.191z"/>
                             </svg>
-                            <a href="https://www.linkedin.com/company/blackridge-group-ltd/" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors">LinkedIn</a>
+                            <a href="https://www.linkedin.com/company/crestgate-holdings/" target="_blank" rel="noopener noreferrer" class="hover:text-gilded transition-colors">LinkedIn</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Bottom Bar -->
-            <div class="border-t border-border-gray pt-8 text-center" data-aos="fade-up" data-aos-delay="600">
-                <p class="text-light-gray text-sm">
-                    © 2025 Blackridge Group Ltd. All rights reserved. | Company Registration: 16482166
+            <div class="border-t border-divider pt-8 text-center" data-aos="fade-up" data-aos-delay="600">
+                <p class="text-soft-gray text-xs">
+                    © 2025 Crestgate Holdings. All rights reserved. | Company Registration: 16482166
                 </p>
-                <p class="text-light-gray text-xs mt-2">
-                    This website uses cookies to enhance user experience. By continuing to browse, you agree to our <a href="privacy.html#cookies" class="underline hover:text-primary">Privacy Policy</a>.
+                <p class="text-cool-gray text-xs mt-2">
+                    This website uses cookies to enhance user experience. By continuing to browse, you agree to our <a href="privacy.html#cookies" class="text-gilded hover:underline">Privacy Policy</a>.
                 </p>
             </div>
         </div>
@@ -728,141 +797,307 @@
             duration: 800,
             easing: 'ease-in-out',
             once: true,
-            offset: 100
+            offset: 120
         });
 
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-        });
 
-        // Smooth scroll for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 100;
-                    const elementPosition = target.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
             });
-        });
+        }
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.classList.add('shadow-lg');
-                header.classList.remove('shadow-sm');
+                header.classList.add('shadow-2xl');
             } else {
-                header.classList.add('shadow-sm');
-                header.classList.remove('shadow-lg');
+                header.classList.remove('shadow-2xl');
             }
         });
 
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax-hero');
-            
-            parallaxElements.forEach(element => {
-                const speed = 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
+        function createHeroVisual() {
+            const heroVisual = document.getElementById('hero-visual');
+            if (!heroVisual) return;
+
+            const svgNS = 'http://www.w3.org/2000/svg';
+            const xlinkNS = 'http://www.w3.org/1999/xlink';
+            heroVisual.innerHTML = '';
+
+            const svg = document.createElementNS(svgNS, 'svg');
+            svg.setAttribute('viewBox', '0 0 1600 1100');
+            svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+
+            const defs = document.createElementNS(svgNS, 'defs');
+
+            const softLight = document.createElementNS(svgNS, 'linearGradient');
+            softLight.setAttribute('id', 'hero-soft-light');
+            softLight.setAttribute('x1', '0%');
+            softLight.setAttribute('y1', '0%');
+            softLight.setAttribute('x2', '100%');
+            softLight.setAttribute('y2', '0%');
+            [
+                { offset: '0%', color: '#050507', opacity: '0.0' },
+                { offset: '35%', color: '#1A1A1F', opacity: '0.25' },
+                { offset: '70%', color: '#1A1A1F', opacity: '0.15' },
+                { offset: '100%', color: '#050507', opacity: '0.0' }
+            ].forEach(stopData => {
+                const stop = document.createElementNS(svgNS, 'stop');
+                stop.setAttribute('offset', stopData.offset);
+                stop.setAttribute('stop-color', stopData.color);
+                stop.setAttribute('stop-opacity', stopData.opacity);
+                softLight.appendChild(stop);
             });
-        });
 
-        // Intersection Observer for section animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            defs.appendChild(softLight);
+            svg.appendChild(defs);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+            const background = document.createElementNS(svgNS, 'rect');
+            background.setAttribute('width', '1600');
+            background.setAttribute('height', '1100');
+            background.setAttribute('fill', '#050507');
+
+            const heroImage = document.createElementNS(svgNS, 'image');
+            heroImage.setAttribute('width', '1600');
+            heroImage.setAttribute('height', '1100');
+            heroImage.setAttributeNS(xlinkNS, 'href', 'https://i.ibb.co/cKs64tcz/black-image.png');
+            heroImage.setAttribute('href', 'https://i.ibb.co/cKs64tcz/black-image.png');
+            heroImage.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+            heroImage.setAttribute('style', 'mix-blend-mode: normal;');
+
+            const overlay = document.createElementNS(svgNS, 'rect');
+            overlay.setAttribute('width', '1600');
+            overlay.setAttribute('height', '1100');
+            overlay.setAttribute('fill', 'url(#hero-soft-light)');
+            overlay.setAttribute('opacity', '0.28');
+
+            svg.appendChild(background);
+            svg.appendChild(heroImage);
+            svg.appendChild(overlay);
+
+            heroVisual.appendChild(svg);
+        }
+
+        function applyPremiumStyling() {
+            const palette = {
+                base: '#D9B957',
+                highlight: '#FFE8A3',
+                shadow: '#7A5A18'
+            };
+
+            const root = document.documentElement;
+            root.style.setProperty('--crestgate-gold-base', palette.base);
+            root.style.setProperty('--crestgate-gold-highlight', palette.highlight);
+            root.style.setProperty('--crestgate-gold-shadow', palette.shadow);
+
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.background = 'linear-gradient(135deg, rgba(5, 5, 7, 0.95), rgba(10, 10, 14, 0.78))';
+                header.style.borderBottom = '1px solid rgba(255, 232, 163, 0.18)';
+                header.style.boxShadow = '0 25px 65px rgba(0, 0, 0, 0.65)';
+            }
+
+            const footer = document.querySelector('footer');
+            if (footer) {
+                footer.style.background = 'linear-gradient(160deg, rgba(5, 5, 7, 0.95), rgba(14, 12, 8, 0.78))';
+                footer.style.borderTop = '1px solid rgba(255, 232, 163, 0.18)';
+                footer.style.boxShadow = '0 -20px 65px rgba(0, 0, 0, 0.6)';
+            }
+
+            document.querySelectorAll('.glass-card').forEach(card => {
+                card.style.border = '1px solid rgba(255, 232, 163, 0.18)';
+                card.style.boxShadow = '0 45px 95px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)';
+                card.style.background = 'linear-gradient(145deg, rgba(17, 17, 24, 0.88), rgba(17, 17, 24, 0.62))';
+            });
+
+            document.querySelectorAll('.scaffold-block, .scaffold-panel, .scaffold-strip').forEach(scaffold => {
+                scaffold.style.borderColor = 'rgba(255, 232, 163, 0.38)';
+                scaffold.style.boxShadow = '0 28px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)';
+            });
+
+            document.querySelectorAll('[data-gold-button]').forEach(button => {
+                if (!button.querySelector('.premium-shine')) {
+                    const shine = document.createElement('span');
+                    shine.className = 'premium-shine';
+                    button.appendChild(shine);
                 }
+                const shineEl = button.querySelector('.premium-shine');
+                button.style.background = `linear-gradient(135deg, ${palette.highlight}, ${palette.base} 55%, ${palette.shadow})`;
+                button.style.color = '#050507';
+                button.style.borderRadius = '9999px';
+                button.style.border = '1px solid rgba(255, 236, 179, 0.65)';
+                button.style.boxShadow = '0 25px 60px rgba(217, 185, 87, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.45)';
+                button.style.transition = 'all 0.45s ease';
+                button.addEventListener('mousemove', event => {
+                    const rect = button.getBoundingClientRect();
+                    shineEl.style.opacity = '1';
+                    shineEl.style.left = `${event.clientX - rect.left}px`;
+                    shineEl.style.top = `${event.clientY - rect.top}px`;
+                });
+                button.addEventListener('mouseleave', () => {
+                    shineEl.style.opacity = '0';
+                });
             });
-        }, observerOptions);
 
-        // Observe sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+            document.querySelectorAll('[data-gold-outline]').forEach(button => {
+                if (!button.querySelector('.premium-shine')) {
+                    const shine = document.createElement('span');
+                    shine.className = 'premium-shine';
+                    button.appendChild(shine);
+                }
+                const shineEl = button.querySelector('.premium-shine');
+                button.style.border = '1px solid rgba(255, 232, 163, 0.45)';
+                button.style.color = palette.highlight;
+                button.style.backdropFilter = 'blur(6px)';
+                button.style.boxShadow = '0 18px 48px rgba(122, 90, 24, 0.35)';
+                button.style.transition = 'all 0.4s ease';
+                button.addEventListener('mouseenter', () => {
+                    button.style.background = 'linear-gradient(135deg, rgba(255, 232, 163, 0.08), rgba(122, 90, 24, 0.25))';
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.style.background = 'transparent';
+                    shineEl.style.opacity = '0';
+                });
+                button.addEventListener('mousemove', event => {
+                    const rect = button.getBoundingClientRect();
+                    shineEl.style.opacity = '0.85';
+                    shineEl.style.left = `${event.clientX - rect.left}px`;
+                    shineEl.style.top = `${event.clientY - rect.top}px`;
+                });
+            });
 
-        // Animated network background with higher fidelity
-        const networkCanvas = document.getElementById('network-canvas');
-        if (networkCanvas) {
+            document.querySelectorAll('.text-gilded').forEach(el => {
+                el.style.textShadow = '0 0 18px rgba(247, 231, 164, 0.45)';
+            });
+        }
+
+        function initNetwork() {
+            const networkCanvas = document.getElementById('constellation-canvas');
+            if (!networkCanvas) return;
+
             const ctx = networkCanvas.getContext('2d');
-            let width, height, nodes;
+            let width = 0;
+            let height = 0;
+            let nodes = [];
+            let backgroundGradient;
 
-            function initCanvas() {
-                width = networkCanvas.width = networkCanvas.offsetWidth;
-                height = networkCanvas.height = networkCanvas.offsetHeight;
-                const NODE_COUNT = Math.floor((width * height) / 12000);
-                nodes = Array.from({ length: NODE_COUNT }, () => ({
+            function createBackgroundGradient() {
+                backgroundGradient = ctx.createRadialGradient(width * 0.75, height * 0.35, 0, width * 0.75, height * 0.35, Math.max(width, height));
+                backgroundGradient.addColorStop(0, 'rgba(255, 236, 179, 0.18)');
+                backgroundGradient.addColorStop(0.45, 'rgba(217, 185, 87, 0.15)');
+                backgroundGradient.addColorStop(1, 'rgba(5, 5, 7, 0)');
+            }
+
+            function createNodes() {
+                const nodeCount = Math.max(24, Math.floor((width * height) / 12000));
+                nodes = Array.from({ length: nodeCount }, () => ({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.7,
-                    vy: (Math.random() - 0.5) * 0.7,
-                    r: Math.random() * 2 + 1
+                    vx: (Math.random() - 0.5) * 0.45,
+                    vy: (Math.random() - 0.5) * 0.45,
+                    r: Math.random() * 1.6 + 0.9
                 }));
+            }
+
+            function initCanvas() {
+                const rect = networkCanvas.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                width = rect.width;
+                height = rect.height;
+                networkCanvas.width = rect.width * dpr;
+                networkCanvas.height = rect.height * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                createBackgroundGradient();
+                createNodes();
+            }
+
+            function wrapNode(node) {
+                if (node.x < -40) node.x = width + 40;
+                if (node.x > width + 40) node.x = -40;
+                if (node.y < -40) node.y = height + 40;
+                if (node.y > height + 40) node.y = -40;
             }
 
             function drawNetwork() {
                 ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = '#050507';
+                ctx.fillRect(0, 0, width, height);
+                if (backgroundGradient) {
+                    ctx.fillStyle = backgroundGradient;
+                    ctx.fillRect(0, 0, width, height);
+                }
+
                 nodes.forEach((node, i) => {
                     node.x += node.vx;
                     node.y += node.vy;
+                    wrapNode(node);
 
-                    if (node.x < 0) node.x += width;
-                    else if (node.x > width) node.x -= width;
-                    if (node.y < 0) node.y += height;
-                    else if (node.y > height) node.y -= height;
+                    const glow = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 14);
+                    glow.addColorStop(0, 'rgba(255, 248, 220, 0.95)');
+                    glow.addColorStop(0.35, 'rgba(255, 232, 163, 0.55)');
+                    glow.addColorStop(1, 'rgba(5, 5, 7, 0)');
+                    ctx.beginPath();
+                    ctx.fillStyle = glow;
+                    ctx.arc(node.x, node.y, node.r * 3.5, 0, Math.PI * 2);
+                    ctx.fill();
 
                     ctx.beginPath();
                     ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(14,165,233,0.9)';
+                    ctx.fillStyle = 'rgba(255, 232, 163, 0.9)';
                     ctx.fill();
 
                     for (let j = i + 1; j < nodes.length; j++) {
                         const other = nodes[j];
                         const dist = Math.hypot(node.x - other.x, node.y - other.y);
-                        if (dist < 120) {
-                            const alpha = 1 - dist / 120;
-                            ctx.strokeStyle = `rgba(14,165,233,${alpha})`;
-                            ctx.lineWidth = 1;
+                        if (dist < 160) {
+                            const alpha = 1 - dist / 160;
+                            const lineGradient = ctx.createLinearGradient(node.x, node.y, other.x, other.y);
+                            lineGradient.addColorStop(0, `rgba(255, 232, 163, ${alpha * 0.8})`);
+                            lineGradient.addColorStop(1, `rgba(122, 90, 24, ${alpha * 0.55})`);
+                            ctx.strokeStyle = lineGradient;
+                            ctx.lineWidth = 0.6 + alpha * 1.1;
                             ctx.beginPath();
                             ctx.moveTo(node.x, node.y);
                             ctx.lineTo(other.x, other.y);
                             ctx.stroke();
                         }
                     }
+
+                    if (Math.random() < 0.002) {
+                        const sparkle = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 18);
+                        sparkle.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
+                        sparkle.addColorStop(0.4, 'rgba(255, 232, 163, 0.5)');
+                        sparkle.addColorStop(1, 'rgba(5, 5, 7, 0)');
+                        ctx.fillStyle = sparkle;
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, node.r * 6, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
                 });
+
                 requestAnimationFrame(drawNetwork);
             }
 
-            window.addEventListener('resize', initCanvas);
             initCanvas();
             drawNetwork();
+
+            window.addEventListener('resize', initCanvas);
         }
+
+        createHeroVisual();
+        applyPremiumStyling();
+        initNetwork();
     </script>
 </body>
 </html>
