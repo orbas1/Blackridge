@@ -32,8 +32,8 @@
                         'rich-black': '#050507',
                         'onyx': '#111118',
                         'divider': 'rgba(255,255,255,0.08)',
-                        'gilded': '#D4AF37',
-                        'gilded-soft': '#F5E6B3',
+                        'gilded': '#0A8ED4',
+                        'gilded-soft': '#AEEFFF',
                         'soft-gray': '#9CA3AF',
                         'cool-gray': '#6B7280'
                     }
@@ -45,8 +45,8 @@
     <style>
         :root {
             --crestgate-black: #050507;
-            --crestgate-gold-base: #d4af37;
-            --crestgate-gold-highlight: #f7e7a4;
+            --crestgate-accent-base: #0a8ed4;
+            --crestgate-accent-highlight: #7fd3ff;
         }
 
         html {
@@ -73,8 +73,8 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(circle at 12% 10%, rgba(217, 185, 87, 0.08), transparent 42%),
-                        radial-gradient(circle at 88% 14%, rgba(255, 232, 163, 0.06), transparent 48%);
+            background: radial-gradient(circle at 12% 10%, rgba(10, 142, 212, 0.1), transparent 42%),
+                        radial-gradient(circle at 88% 14%, rgba(127, 211, 255, 0.08), transparent 48%);
             opacity: 0.5;
         }
 
@@ -85,13 +85,13 @@
 
         header.site-header {
             background: linear-gradient(135deg, rgba(5, 5, 7, 0.95), rgba(10, 10, 14, 0.78));
-            border-bottom: 1px solid rgba(255, 232, 163, 0.18);
+            border-bottom: 1px solid rgba(127, 211, 255, 0.18);
             box-shadow: 0 25px 65px rgba(0, 0, 0, 0.65);
         }
 
         footer.site-footer {
             background: linear-gradient(160deg, rgba(5, 5, 7, 0.95), rgba(14, 12, 8, 0.78));
-            border-top: 1px solid rgba(255, 232, 163, 0.18);
+            border-top: 1px solid rgba(127, 211, 255, 0.18);
             box-shadow: 0 -20px 65px rgba(0, 0, 0, 0.6);
         }
     </style>
@@ -103,13 +103,11 @@
         <nav class="container mx-auto max-w-6xl px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <div class="h-11 w-11 rounded-full border border-gilded/60 bg-gradient-to-br from-gilded/20 via-gilded/5 to-transparent flex items-center justify-center">
-                        <span class="text-gilded text-xl font-semibold">B</span>
-                    </div>
                     <div>
                         <span class="block text-sm tracking-[0.4em] uppercase text-gilded">Blackwellen</span>
                         <span class="block text-lg font-semibold text-white">Ltd</span>
                     </div>
+                    <img src="https://i.ibb.co/tTyXFvBL/craiyon-013431-image.png" alt="Blackwellen Ltd logo" class="h-[7.5rem] w-auto object-contain">
                 </div>
                 <a href="index.html" class="text-soft-gray text-sm font-medium hover:text-gilded transition-colors">Back to Website</a>
             </div>
@@ -212,22 +210,17 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const palette = {
-                base: getComputedStyle(document.documentElement).getPropertyValue('--crestgate-gold-base') || '#d4af37',
-                highlight: getComputedStyle(document.documentElement).getPropertyValue('--crestgate-gold-highlight') || '#f7e7a4'
+                base: getComputedStyle(document.documentElement).getPropertyValue('--crestgate-accent-base') || '#0a8ed4',
+                highlight: getComputedStyle(document.documentElement).getPropertyValue('--crestgate-accent-highlight') || '#7fd3ff'
             };
 
             document.querySelectorAll('.text-gilded').forEach(el => {
-                el.style.textShadow = '0 0 18px rgba(247, 231, 164, 0.45)';
+                el.style.textShadow = '0 0 18px rgba(163, 230, 255, 0.45)';
             });
-
-            const badge = document.querySelector('header .h-11');
-            if (badge) {
-                badge.style.boxShadow = '0 18px 40px rgba(217, 185, 87, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
-            }
 
             document.querySelectorAll('main a').forEach(link => {
                 link.addEventListener('mouseenter', () => {
-                    link.style.color = palette.highlight.trim() || '#f7e7a4';
+                    link.style.color = palette.highlight.trim() || '#7fd3ff';
                 });
                 link.addEventListener('mouseleave', () => {
                     link.style.color = '';
