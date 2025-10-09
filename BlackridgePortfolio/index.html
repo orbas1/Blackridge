@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackwellen Ltd &mdash; Tech-Focused Investment Holdings Company</title>
-    <meta name="description" content="Blackwellen Ltd is a technology-focused investment company building and backing high-potential brands, digital platforms, and emerging technologies.">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/s912pw8N/craiyon-013816-image.png">
-    <link rel="shortcut icon" href="https://i.ibb.co/s912pw8N/craiyon-013816-image.png">
+    <title>Blackwellen Ltd | Enterprise Web Portals for Education, Talent &amp; Services</title>
+    <meta name="description" content="Discover Blackwellen Ltd's enterprise-grade platforms—Edulure, Gigvora, and Fixnova—delivering connected learning, freelance marketplaces, and on-demand service operations.">
+    <meta name="keywords" content="Blackwellen, Edulure, Gigvora, Fixnova, enterprise web portal, education platform, freelance marketplace, on-demand services, Flutter apps, SaaS launch">
+    <meta property="og:title" content="Blackwellen Ltd | Enterprise Web Portals for Education, Talent &amp; Services">
+    <meta property="og:description" content="Preview the Edulure, Gigvora, and Fixnova platforms—engineered by Blackwellen Ltd for global enterprises and ambitious operators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blackwellen.com/">
+    <meta property="og:image" content="https://i.ibb.co/XfDWpPpM/11.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/PzjD3XQf/12-cropped.png">
+    <link rel="shortcut icon" href="https://i.ibb.co/PzjD3XQf/12-cropped.png">
 
     <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +26,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Custom Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -29,16 +34,10 @@
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        'rich-black': '#050507',
-                        'obsidian': '#09090F',
-                        'onyx': '#111118',
-                        'slate-void': '#1B1B24',
-                        'graphite': '#23232E',
-                        'soft-gray': '#9CA3AF',
-                        'cool-gray': '#6B7280',
-                        'divider': 'rgba(255,255,255,0.08)',
-                        'gilded': '#3B82F6',
-                        'gilded-soft': '#BAE6FD'
+                        'bw-blue': '#0039A6',
+                        'bw-gold': '#D4AF37',
+                        'bw-sky': '#0EA5E9',
+                        'bw-slate': '#1F2937'
                     }
                 }
             }
@@ -46,1212 +45,528 @@
     </script>
 
     <style>
-        :root {
-            --crestgate-black: #050507;
-            --hero-image-black: #06080B;
-            --crestgate-accent-base: #3b82f6;
-            --crestgate-accent-highlight: #93c5fd;
-            --crestgate-accent-shadow: #0b1f4b;
-            --hero-visual-aspect: 1600 / 1100;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--crestgate-black);
-            color: #F9FAFB;
+            background: #ffffff;
+            color: #0f172a;
         }
 
-        .section-crestone {
-            padding: 5rem 1.5rem;
+        .hero-section {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(37, 99, 235, 0.05));
         }
 
-        .global-surface {
+        .hero-sheen::before {
+            content: '';
+            position: absolute;
+            inset: -20% -10% auto -10%;
+            height: 420px;
+            background: radial-gradient(circle at top, rgba(14, 165, 233, 0.18), transparent 65%);
+            z-index: 0;
+        }
+
+        .hero-sheen::after {
+            content: '';
+            position: absolute;
+            inset: auto -10% -20% -10%;
+            height: 360px;
+            background: radial-gradient(circle at bottom, rgba(212, 175, 55, 0.2), transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-sheen > * {
             position: relative;
-            background: var(--crestgate-black);
+            z-index: 10;
         }
 
-        .hero-section-surface {
-            background: var(--hero-image-black);
+        .hero-visual {
+            position: relative;
+            overflow: hidden;
+            border-radius: 32px;
+            box-shadow: 0 40px 80px -30px rgba(15, 23, 42, 0.5);
         }
 
-        .global-surface::before {
+        .hero-visual::after {
             content: '';
             position: absolute;
             inset: 0;
-            pointer-events: none;
-            background: radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.08), transparent 42%),
-                        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.05), transparent 48%);
-            opacity: 0.5;
-        }
-
-        .hero-section-surface::before {
-            background: none;
-            opacity: 0;
-        }
-
-        .global-surface > * {
-            position: relative;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.4) 100%);
             z-index: 1;
-        }
-
-        .glass-card {
-            background: rgba(17, 17, 24, 0.72);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(18px);
-        }
-
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.24);
-        }
-
-        .scaffold-block,
-        .scaffold-panel,
-        .scaffold-strip {
-            position: relative;
-            border-radius: 28px;
-            border: 1px dashed rgba(147, 197, 253, 0.35);
-            min-height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(17, 17, 24, 0.7), rgba(17, 17, 24, 0.35));
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 22px 60px rgba(0, 0, 0, 0.45);
-            overflow: hidden;
-        }
-
-        .scaffold-panel {
-            min-height: 260px;
-        }
-
-        .scaffold-strip {
-            min-height: 120px;
-            border-radius: 22px;
-        }
-
-        .scaffold-stack {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .scaffold-stack .scaffold-strip {
-            background: linear-gradient(135deg, rgba(17, 17, 24, 0.78), rgba(17, 17, 24, 0.4));
-        }
-
-        .scaffold-ribbon {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, rgba(96, 165, 250, 0.08), rgba(5, 5, 7, 0) 48%);
-            mix-blend-mode: screen;
-        }
-
-        .scaffold-label {
-            text-transform: uppercase;
-            letter-spacing: 0.35em;
-            font-size: 0.7rem;
-            color: rgba(147, 197, 253, 0.85);
-        }
-
-        .scaffold-block::after,
-        .scaffold-panel::after,
-        .scaffold-strip::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.12), transparent 60%);
-            opacity: 0.65;
             pointer-events: none;
         }
 
-        #hero-visual {
-            position: relative;
-            width: 100%;
-            aspect-ratio: var(--hero-visual-aspect, 1600 / 1100);
-            height: auto;
-            border-radius: 0;
-            overflow: hidden;
-            background: var(--hero-image-black);
-            box-shadow: none;
-        }
-
-        #hero-visual svg {
-            position: absolute;
-            inset: 0;
+        .hero-visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .hero-stat-layer {
-            position: absolute;
-            inset: auto 1.75rem 1.75rem 1.75rem;
-            display: none;
-        }
-
-        .hero-metric {
-            border-radius: 1.5rem;
-            background: rgba(8, 8, 12, 0.9);
-            border: 1px solid rgba(147, 197, 253, 0.16);
-            padding: 1.5rem;
-        }
-
-        .hero-metric small {
             display: block;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            font-size: 0.55rem;
-            margin-bottom: 0.65rem;
-            color: rgba(147, 197, 253, 0.8);
-        }
-
-        .hero-metric strong {
-            display: block;
-            font-size: 1rem;
-            color: rgba(236, 236, 241, 0.9);
-        }
-
-        .hero-title {
-            line-height: 1.15;
-            text-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-        }
-
-        .premium-shine {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 160px;
-            height: 160px;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(147, 197, 253, 0.35) 28%, rgba(147, 197, 253, 0) 70%);
-            opacity: 0;
-            transition: opacity 0.35s ease;
-            pointer-events: none;
-            mix-blend-mode: screen;
-        }
-
-        [data-accent-button],
-        [data-accent-outline] {
             position: relative;
-            overflow: hidden;
-            letter-spacing: 0.2em;
+            z-index: 0;
         }
 
-        .constellation-frame {
-            position: relative;
-            border-radius: 32px;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(8, 8, 12, 0.95), rgba(5, 5, 8, 0.75));
-            box-shadow: 0 45px 110px rgba(0, 0, 0, 0.6);
-            min-height: clamp(320px, 55vh, 520px);
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(248, 250, 252, 0.85));
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 35px 60px -40px rgba(15, 23, 42, 0.35);
         }
 
-        #constellation-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
+        .platform-card {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: 0 32px 70px -36px rgba(15, 23, 42, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .orb-core {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: clamp(180px, 38%, 260px);
-            aspect-ratio: 1 / 1;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(224, 242, 254, 0.95), rgba(37, 99, 235, 0.85) 55%, rgba(11, 31, 75, 0.75) 75%, rgba(5, 5, 7, 0.92));
-            box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.45), 0 35px 85px rgba(37, 99, 235, 0.35);
-            animation: orbPulse 12s ease-in-out infinite;
+        .platform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 38px 90px -32px rgba(14, 116, 144, 0.35);
         }
 
-        .orb-core::before,
-        .orb-core::after {
+        .timeline::before {
             content: '';
             position: absolute;
-            inset: -35%;
-            border-radius: 50%;
-            border: 1px solid rgba(96, 165, 250, 0.22);
-            filter: blur(0.6px);
-            animation: orbRing 18s linear infinite;
+            inset: 0;
+            width: 4px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, rgba(14, 165, 233, 0.4), rgba(212, 175, 55, 0.4));
         }
 
-        .orb-core::after {
-            inset: -55%;
-            animation-duration: 26s;
-            animation-direction: reverse;
-            border-color: rgba(147, 197, 253, 0.12);
+        .timeline-step {
+            position: relative;
         }
 
-        .orb-glare {
+        .timeline-step::before {
+            content: '';
             position: absolute;
-            top: 8%;
-            left: 16%;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.0) 70%);
-            mix-blend-mode: screen;
-            filter: blur(12px);
-            opacity: 0.7;
-            animation: glareSweep 9s ease-in-out infinite;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: #ffffff;
+            border: 4px solid #0ea5e9;
+            box-shadow: 0 0 0 6px rgba(14, 165, 233, 0.12);
         }
 
-        .orb-rail {
-            position: absolute;
-            inset: 12% 8%;
-            border-radius: 50%;
-            border: 1px solid rgba(147, 197, 253, 0.08);
-            filter: blur(0.4px);
+        .timeline-step:nth-child(odd)::before {
+            border-color: #d4af37;
+            box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.12);
         }
 
-        .orb-rail:nth-of-type(2) {
-            inset: 22% 14%;
-            border-color: rgba(147, 197, 253, 0.14);
+        .cta-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 45%, #d4af37 100%);
         }
 
-        .orb-rail:nth-of-type(3) {
-            inset: 33% 22%;
-            border-color: rgba(147, 197, 253, 0.2);
+        .footer-link {
+            color: #0f172a;
         }
 
-        @keyframes orbPulse {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.05);
-            }
+        .section-visual {
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 28px 60px -32px rgba(15, 23, 42, 0.4);
         }
 
-        @keyframes orbRing {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes glareSweep {
-            0%, 100% {
-                transform: translate3d(0, 0, 0) scale(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translate3d(14%, 18%, 0) scale(1.2);
-                opacity: 0.9;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .hero-stat-layer {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section-crestone {
-                padding: 3.5rem 1.25rem;
-            }
-
-            #hero-visual {
-                height: clamp(260px, 68vw, 420px);
-                border-radius: 24px;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
+        .section-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
     </style>
 </head>
-<body class="text-white">
-
+<body class="bg-white text-slate-900">
     <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-onyx/85 backdrop-blur-xl border-b border-divider">
-        <nav class="container mx-auto max-w-7xl px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo Placeholder -->
-                <div class="flex items-center space-x-3">
-                    <div class="h-11 w-11 rounded-full border border-gilded/60 bg-gradient-to-br from-gilded/20 via-gilded/5 to-transparent flex items-center justify-center overflow-hidden">
-                        <img src="https://i.ibb.co/tTyXFvBL/craiyon-013431-image.png" alt="Blackwellen Ltd logo" class="h-10 w-10 object-contain">
-                    </div>
-                    <div>
-                        <span class="block text-sm tracking-[0.4em] uppercase text-gilded">Blackwellen</span>
-                        <span class="block text-lg font-semibold text-white">Ltd</span>
-                    </div>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <a href="https://imgbb.com/" class="flex-shrink-0" aria-label="Blackwellen Ltd" target="_blank" rel="noopener">
+                    <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen Ltd logo" class="h-12 w-auto md:h-14">
+                </a>
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#vision" class="hover:text-bw-blue transition-colors">Vision</a>
+                    <a href="#platforms" class="hover:text-bw-blue transition-colors">Platforms</a>
+                    <a href="#experience" class="hover:text-bw-blue transition-colors">Enterprise</a>
+                    <a href="#timeline" class="hover:text-bw-blue transition-colors">Timeline</a>
+                    <a href="#cta" class="hover:text-bw-blue transition-colors">Partner</a>
+                    <a href="privacy.html" class="hover:text-bw-blue transition-colors">Privacy</a>
                 </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#about" class="text-soft-gray hover:text-gilded transition-colors">About</a>
-                    <a href="#holdings" class="text-soft-gray hover:text-gilded transition-colors">Holdings</a>
-                    <a href="#constellation" class="text-soft-gray hover:text-gilded transition-colors">Constellation</a>
-                    <a href="#values" class="text-soft-gray hover:text-gilded transition-colors">Values</a>
-                    <a href="#culture" class="text-soft-gray hover:text-gilded transition-colors">Culture</a>
-                    <a href="#mission" class="text-soft-gray hover:text-gilded transition-colors">Mission</a>
-                    <a href="privacy.html" class="text-soft-gray hover:text-gilded transition-colors">Privacy</a>
+                <div class="hidden lg:block">
+                    <a href="#cta" class="inline-flex items-center rounded-full border border-transparent bg-bw-blue px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-bw-blue/40 transition hover:bg-bw-sky">
+                        Join the Launch List
+                    </a>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="lg:hidden text-gilded focus:outline-none">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <button id="mobile-menu-button" class="lg:hidden text-bw-blue focus:outline-none" aria-label="Open navigation">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-6 border-t border-divider pt-4">
-                <div class="flex flex-col space-y-4 text-sm font-medium">
-                    <a href="#about" class="text-soft-gray hover:text-gilded transition-colors">About</a>
-                    <a href="#holdings" class="text-soft-gray hover:text-gilded transition-colors">Holdings</a>
-                    <a href="#constellation" class="text-soft-gray hover:text-gilded transition-colors">Constellation</a>
-                    <a href="#values" class="text-soft-gray hover:text-gilded transition-colors">Values</a>
-                    <a href="#culture" class="text-soft-gray hover:text-gilded transition-colors">Culture</a>
-                    <a href="#mission" class="text-soft-gray hover:text-gilded transition-colors">Mission</a>
-                    <a href="privacy.html" class="text-soft-gray hover:text-gilded transition-colors">Privacy</a>
+            <div id="mobile-menu" class="hidden lg:hidden pb-6">
+                <div class="flex flex-col space-y-4 text-sm font-semibold text-slate-600">
+                    <a href="#vision" class="hover:text-bw-blue transition-colors">Vision</a>
+                    <a href="#platforms" class="hover:text-bw-blue transition-colors">Platforms</a>
+                    <a href="#experience" class="hover:text-bw-blue transition-colors">Enterprise</a>
+                    <a href="#timeline" class="hover:text-bw-blue transition-colors">Timeline</a>
+                    <a href="#cta" class="hover:text-bw-blue transition-colors">Partner</a>
+                    <a href="privacy.html" class="hover:text-bw-blue transition-colors">Privacy</a>
                 </div>
+                <a href="#cta" class="mt-6 inline-flex items-center justify-center rounded-full border border-transparent bg-bw-blue px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white shadow-lg shadow-bw-blue/40 transition hover:bg-bw-sky">
+                    Join the Launch List
+                </a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="section-crestone global-surface hero-section-surface pt-32 pb-24 relative overflow-hidden">
-        <div class="container mx-auto max-w-7xl relative z-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <!-- Hero Content -->
-                <div data-aos="fade-up" data-aos-duration="1000" class="lg:col-span-6 max-w-3xl">
-                    <p class="text-gilded uppercase tracking-[0.55em] text-xs mb-5">Focused Tech Holdings</p>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold hero-title mb-6">
-                        Disciplined Tech Operator
-                    </h1>
-                    <p class="text-lg text-soft-gray/90 mb-10 leading-relaxed">
-                        Blackwellen Ltd runs a tight portfolio of digital portals, pairing dependable infrastructure with measured product improvements that compound over time.
-                    </p>
-                    <div class="grid sm:flex sm:flex-wrap gap-4">
-                        <a href="#holdings" data-accent-button class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs shadow-lg">
-                            Explore Holdings
-                            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                        <a href="#contact" data-accent-outline class="inline-flex items-center justify-center px-10 py-4 font-semibold rounded-full uppercase tracking-[0.28em] text-xs">
-                            Connect With Us
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hero Visual -->
-                <div class="lg:col-span-6 relative" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="250">
-                    <div id="hero-visual" class="relative"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Holdings Overview -->
-    <section id="holdings" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <p class="text-gilded uppercase tracking-[0.5em] text-xs mb-4">Our Portfolio</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-white">Three portals, each with a clear role.</h2>
-                <p class="mt-4 text-soft-gray max-w-2xl mx-auto">
-                    Light stacks, regular audits, and a single design system keep the trio consistent.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="50">
-                    <p class="text-gilded uppercase tracking-[0.35em] text-xs mb-3">Portal 01</p>
-                    <h3 class="text-xl font-semibold text-white mb-3">Immersive Insights</h3>
-                    <p class="text-soft-gray text-sm">Weekly editorial hub covering VR and mixed reality signals.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="120">
-                    <p class="text-gilded uppercase tracking-[0.35em] text-xs mb-3">Portal 02</p>
-                    <h3 class="text-xl font-semibold text-white mb-3">Builder Hub</h3>
-                    <p class="text-soft-gray text-sm">Resource centre with docs, updates, and support for builders.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-gilded uppercase tracking-[0.35em] text-xs mb-3">Portal 03</p>
-                    <h3 class="text-xl font-semibold text-white mb-3">Client Access</h3>
-                    <p class="text-soft-gray text-sm">Secure dashboards for clients, investors, and project comms.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Constellation Showcase -->
-    <section id="constellation" class="section-crestone global-surface border-t border-divider relative overflow-hidden">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-                <div class="space-y-6" data-aos="fade-right">
-                    <p class="text-gilded uppercase tracking-[0.5em] text-xs">Blackwellen Constellation</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-white">The network behind our three portals.</h2>
-                    <p class="text-soft-gray text-lg leading-relaxed">
-                        Shared ops keep each site patched, monitored, and on brand.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-soft-gray/85">
-                        <div class="glass-card rounded-2xl p-6">
-                            <p class="text-gilded uppercase tracking-[0.45em] text-xs mb-3">Shared Ops</p>
-                            <p>Centralised hosting, observability, and response playbooks for each rollout.</p>
-                        </div>
-                        <div class="glass-card rounded-2xl p-6">
-                            <p class="text-gilded uppercase tracking-[0.45em] text-xs mb-3">Content Cadence</p>
-                            <p>Coordinated windows so releases land smoothly across the trio.</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-soft-gray/80">
-                        <li class="flex items-start space-x-3">
-                            <span class="mt-1 inline-block h-2 w-2 rounded-full bg-gilded"></span>
-                            <span>Node clusters brighten when focus shifts to a specific portal.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="mt-1 inline-block h-2 w-2 rounded-full bg-gilded"></span>
-                            <span>Orbital rings represent the shared design and compliance checks.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="mt-1 inline-block h-2 w-2 rounded-full bg-gilded"></span>
-                            <span>The core orb keeps uptime, access, and data standards aligned.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="constellation-frame" data-aos="fade-left" data-aos-delay="200">
-                    <canvas id="constellation-canvas"></canvas>
-                    <div class="orb-core"></div>
-                    <div class="orb-glare"></div>
-                    <span class="orb-rail"></span>
-                    <span class="orb-rail"></span>
-                    <span class="orb-rail"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div class="space-y-6" data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-semibold text-gilded">About Blackwellen Ltd</h2>
-                    <p class="text-soft-gray text-lg leading-relaxed">
-                        We are a UK holdings company dedicated to three technology-led portals. The brief: dependable, polished, and ready for the next release.
-                    </p>
-                    <p class="text-soft-gray leading-relaxed">
-                        A compact leadership team handles governance, tooling, and vendor ties so the portals stay focused on their users.
-                    </p>
-                </div>
-                <div class="glass-card rounded-3xl p-10" data-aos="fade-left" data-aos-delay="200">
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-gilded/15 border border-gilded/40 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-white">Multi-Sector Technology Expertise</h3>
-                                <p class="text-soft-gray">Experience across SaaS, AI, XR, and digital media keeps the trio current.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-gilded/15 border border-gilded/40 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M5 6h14M7 2h10M9 18l3 3 3-3m-3 3V10"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-white">Governance &amp; Operational Discipline</h3>
-                                <p class="text-soft-gray">Straightforward governance keeps decision-making quick and accountable.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-gilded/15 border border-gilded/40 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 1.343-3 3v7h6v-7c0-1.657-1.343-3-3-3z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 21h14"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-white">Purpose-Driven Capital</h3>
-                                <p class="text-soft-gray">We invest with restraint, backing changes that improve the user experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values -->
-    <section id="values" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <p class="text-gilded uppercase tracking-[0.5em] text-xs">Values</p>
-                <h2 class="text-3xl md:text-4xl font-semibold">Principles that Shape Blackwellen</h2>
-                <p class="mt-4 text-soft-gray max-w-3xl mx-auto">These values keep the three holdings aligned with the Blackwellen ethos.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card rounded-3xl p-6">
-                    <h3 class="text-lg font-semibold text-white mb-3">Integrity</h3>
-                    <p class="text-soft-gray text-sm">We operate with transparency and keep reporting straightforward.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <h3 class="text-lg font-semibold text-white mb-3">Innovation</h3>
-                    <p class="text-soft-gray text-sm">We invest in useful technology, not hype.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <h3 class="text-lg font-semibold text-white mb-3">Stewardship</h3>
-                    <p class="text-soft-gray text-sm">We look after the portals with long-term stability in mind.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <h3 class="text-lg font-semibold text-white mb-3">Collaboration</h3>
-                    <p class="text-soft-gray text-sm">We work closely with contributors, designers, and clients to keep standards high.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Culture & Values -->
-    <section id="culture" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <p class="text-gilded uppercase tracking-[0.5em] text-xs">Culture &amp; People</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold mb-6">Culture &amp; Values in Action</h2>
-                    <p class="text-soft-gray leading-relaxed mb-6">
-                        The crew stays small and focused on quality. Every release gets peer review and a user-first lens.
-                    </p>
-                    <ul class="space-y-4 text-soft-gray">
-                        <li class="flex items-start space-x-3">
-                            <span class="text-gilded mt-1">&#9679;</span>
-                            <span>Shared tooling sessions line up content, development, and compliance.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-gilded mt-1">&#9679;</span>
-                            <span>Weekly standups surface issues fast and keep response times low.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-gilded mt-1">&#9679;</span>
-                            <span>Budget for learning keeps the crew current on accessibility, security, and design.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                    <div class="rounded-[2.5rem] overflow-hidden border border-gilded/20">
-                        <img src="https://i.ibb.co/cKs64tcz/black-image.png" alt="Immersive collaboration" class="w-full h-full object-cover opacity-90">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-rich-black via-transparent to-rich-black/95"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Statement -->
-    <section id="mission" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-5xl text-center" data-aos="fade-up">
-            <p class="text-gilded uppercase tracking-[0.5em] text-xs">Mission Statement</p>
-            <h2 class="text-3xl md:text-4xl font-semibold mt-4">Mission</h2>
-            <p class="text-soft-gray text-lg leading-relaxed mt-6">
-                Grow three portals with intent, support inclusive experiences, and release responsibly.
-            </p>
-        </div>
-    </section>
-
-    <!-- Future Roadmap Scaffold -->
-    <section id="roadmap" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <p class="text-gilded uppercase tracking-[0.5em] text-xs">Roadmap Scaffold</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-white">Reserved slots for upcoming notes.</h2>
-                <p class="mt-4 text-soft-gray max-w-3xl mx-auto">These placeholders hold space for future release details.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="scaffold-block" data-aos="fade-up" data-aos-delay="50">
-                    <span class="scaffold-label">Portal Release Slot</span>
-                </div>
-                <div class="scaffold-block" data-aos="fade-up" data-aos-delay="120">
-                    <span class="scaffold-label">Partner Update Slot</span>
-                </div>
-                <div class="scaffold-block" data-aos="fade-up" data-aos-delay="200">
-                    <span class="scaffold-label">Ops Checklist Slot</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Insights Scaffold -->
-    <section id="insights" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <p class="text-gilded uppercase tracking-[0.5em] text-xs">Insights Scaffold</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-white">Placeholders for future stories.</h2>
-                <p class="mt-4 text-soft-gray max-w-2xl mx-auto">Ready-made panels for insights once content is locked.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="scaffold-panel" data-aos="fade-right">
-                    <div class="scaffold-ribbon"></div>
-                    <span class="scaffold-label">Feature Story Placeholder</span>
-                </div>
-                <div class="scaffold-stack space-y-4" data-aos="fade-left" data-aos-delay="150">
-                    <div class="scaffold-strip">
-                        <span class="scaffold-label">Metric Snapshot Placeholder</span>
-                    </div>
-                    <div class="scaffold-strip">
-                        <span class="scaffold-label">Stakeholder Quote Placeholder</span>
-                    </div>
-                    <div class="scaffold-strip">
-                        <span class="scaffold-label">Timeline Placeholder</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Footer Section -->
-    <footer id="contact" class="section-crestone global-surface border-t border-divider">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-                <!-- Company Info -->
-                <div data-aos="fade-up">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="h-11 w-11 rounded-full border border-gilded/60 bg-gradient-to-br from-gilded/20 via-gilded/5 to-transparent flex items-center justify-center overflow-hidden">
-                            <img src="https://i.ibb.co/tTyXFvBL/craiyon-013431-image.png" alt="Blackwellen Ltd logo" class="h-10 w-10 object-contain">
-                        </div>
-                        <div>
-                            <span class="block text-sm tracking-[0.4em] uppercase text-gilded">Blackwellen</span>
-                            <span class="block text-lg font-semibold text-white">Ltd</span>
-                        </div>
-                    </div>
-                    <p class="text-soft-gray leading-relaxed mb-6">
-                        Blackwellen Ltd looks after three future-focused web portals that blend technology, creativity, and practical use.
-                    </p>
-                    <div class="space-y-2 text-soft-gray text-sm">
-                        <p class="uppercase tracking-[0.3em] text-gilded text-xs">Registered Address</p>
-                        <p>
-                            61 Bridge Street<br>
-                            Kington, Hertfordshire<br>
-                            HR5 3DJ<br>
-                            United Kingdom
+    <main class="relative" id="top">
+        <!-- Hero Section -->
+        <section class="relative hero-section pt-32 pb-24">
+            <div class="hero-sheen absolute inset-0"></div>
+            <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-start">
+                    <div class="lg:col-span-6 space-y-6" data-aos="fade-up">
+                        <span class="inline-flex items-center rounded-full bg-bw-blue/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue">Coming Soon • 2024 &ndash; 2025</span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-bw-slate">
+                            Enterprise Portals Engineered for the Next Digital Frontier
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Blackwellen Ltd is preparing an intelligent suite of SaaS portals designed to power learning ecosystems, freelance talent networks, and on-demand field operations. Each platform is architected for international scale, measurable ROI, and an executive-ready experience from day one.
                         </p>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
-                    <nav class="space-y-3 text-soft-gray text-sm">
-                        <a href="#about" class="block hover:text-gilded transition-colors">About Us</a>
-                        <a href="#holdings" class="block hover:text-gilded transition-colors">Holdings</a>
-                        <a href="#constellation" class="block hover:text-gilded transition-colors">Constellation</a>
-                        <a href="#values" class="block hover:text-gilded transition-colors">Values</a>
-                        <a href="#culture" class="block hover:text-gilded transition-colors">Culture</a>
-                        <a href="#mission" class="block hover:text-gilded transition-colors">Mission Statement</a>
-                        <a href="#roadmap" class="block hover:text-gilded transition-colors">Roadmap Scaffold</a>
-                        <a href="#insights" class="block hover:text-gilded transition-colors">Insights Scaffold</a>
-                        <a href="privacy.html" class="block hover:text-gilded transition-colors">Privacy Policy</a>
-                    </nav>
-                    <div class="mt-8 text-soft-gray text-sm">
-                        <h4 class="text-white font-semibold mb-2">ESG &amp; CSR</h4>
-                        <p>Low-energy hosting, accessible design, and community partnerships are standard practice across every Blackwellen release.</p>
-                    </div>
-                </div>
-
-                <!-- Contact Info -->
-                <div data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="text-xl font-semibold text-white mb-6">Contact</h3>
-                    <div class="space-y-4 text-soft-gray text-sm">
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-gilded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <a href="mailto:info@blackwellen.com" class="hover:text-gilded transition-colors">info@blackwellen.com</a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#platforms" class="inline-flex items-center rounded-full border border-transparent bg-bw-blue px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white shadow-lg shadow-bw-blue/40 transition hover:bg-bw-sky">
+                                Explore the Platforms
+                            </a>
+                            <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-bw-blue transition hover:bg-bw-blue/10">
+                                Schedule an Executive Briefing
+                            </a>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-gilded" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003zM7.118 21.5H3.554V9.001h3.564V21.5zM5.336 7.433a2.065 2.065 0 110-4.13 2.065 2.065 0 010 4.13zm16.114 14.067h-3.553v-5.585c0-1.332-.027-3.046-1.857-3.046-1.858 0-2.143 1.45-2.143 2.948v5.683h-3.553V9.001h3.41v1.706h.048c.475-.9 1.638-1.855 3.37-1.855 3.6 0 4.278 2.372 4.278 5.457v6.191z"/>
-                            </svg>
-                            <a href="https://www.linkedin.com/company/blackwellen-ltd/" target="_blank" rel="noopener noreferrer" class="hover:text-gilded transition-colors">LinkedIn</a>
+                    </div>
+                    <div class="lg:col-span-6 lg:-mt-8" data-aos="fade-left" data-aos-delay="150">
+                        <div class="hero-visual">
+                            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Executive leadership reviewing enterprise analytics">
+                            <div class="absolute inset-x-0 bottom-0 z-10 p-8 md:p-10 text-white">
+                                <p class="text-sm uppercase tracking-[0.4em] text-white/80">Blackwellen Platform Studio</p>
+                                <h2 class="mt-3 text-2xl font-semibold">Edulure • Gigvora • Fixnova</h2>
+                                <p class="mt-3 text-white/80 text-sm md:text-base leading-relaxed">Dedicated strategists, engineers, and designers deliver future-proof architectures, Flutter-native companions, and measurable launch playbooks for every release.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Bottom Bar -->
-            <div class="border-t border-divider pt-8 text-center" data-aos="fade-up" data-aos-delay="600">
-                <p class="text-soft-gray text-xs">
-                    © 2025 Blackwellen Ltd. All rights reserved. | Company Registration: 16482166
-                </p>
-                <p class="text-cool-gray text-xs mt-2">
-                    This website uses cookies to enhance user experience. By continuing to browse, you agree to our <a href="privacy.html#cookies" class="text-gilded hover:underline">Privacy Policy</a>.
-                </p>
+        <!-- Vision Section -->
+        <section id="vision" class="py-20 bg-slate-50">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <span class="inline-flex items-center rounded-full bg-bw-gold/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-gold">Why Blackwellen</span>
+                        <h2 class="mt-5 text-3xl md:text-4xl font-semibold text-bw-slate">A disciplined investment house with a product obsession.</h2>
+                        <p class="mt-5 text-lg text-slate-600 leading-relaxed">
+                            We fuse venture-grade strategy with engineering craftsmanship to launch portals that outperform generic SaaS. From discovery to deployment, our delivery methodology addresses security, localisation, compliance, and growth marketing long before go-live.
+                        </p>
+                        <p class="mt-4 text-slate-600 leading-relaxed">
+                            Edulure, Gigvora, and Fixnova are the culmination of market research across universities, enterprises, and service networks. Every module is validated through stakeholder councils so your team can activate new revenue on a proven foundation.
+                        </p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
+                            <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
+                                <p class="text-xs uppercase tracking-[0.3em] text-bw-blue">Operating Model</p>
+                                <p class="mt-3 font-semibold text-bw-slate">Central governance with agile product teams focused on outcomes.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
+                                <p class="text-xs uppercase tracking-[0.3em] text-bw-blue">Launch Network</p>
+                                <p class="mt-3 font-semibold text-bw-slate">Global partner roster for payments, compliance, support, and marketing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-8" data-aos="fade-left" data-aos-delay="150">
+                        <figure class="section-visual">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Executives reviewing product roadmaps in a bright office" loading="lazy">
+                        </figure>
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
+                            <h3 class="text-xl font-semibold text-bw-slate">Enterprise Confidence</h3>
+                            <p class="mt-3 text-slate-600">Each platform is built for uptime, compliance, and integration with leading cloud services. Expect ISO-aligned processes, SOC-ready documentation, and accessible UX from day one.</p>
+                        </div>
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
+                            <h3 class="text-xl font-semibold text-bw-slate">Revenue Momentum</h3>
+                            <p class="mt-3 text-slate-600">Subscription engines, paywall controls, and monetisation paths are part of the base build—so your go-to-market strategy can start on launch day.</p>
+                        </div>
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
+                            <h3 class="text-xl font-semibold text-bw-slate">User Delight</h3>
+                            <p class="mt-3 text-slate-600">We obsess over usability, from micro-interactions to localisation. Expect cohesive visuals, purposeful animations, and native mobile parity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platforms Section -->
+        <section id="platforms" class="py-24">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                    <span class="inline-flex items-center rounded-full bg-bw-blue/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue">Platform Portfolio</span>
+                    <h2 class="mt-5 text-4xl font-semibold text-bw-slate">Three portals, one vision: transform how communities learn, work, and thrive.</h2>
+                    <p class="mt-4 text-lg text-slate-600">Each platform is engineered with signature brand identities, premium UX, and battle-tested feature sets ready for enterprise roll-out.</p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 gap-12">
+                    <!-- Edulure -->
+                    <article class="platform-card p-10" data-aos="fade-up" data-aos-delay="100">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                            <div class="lg:col-span-4 flex flex-col items-start space-y-4">
+                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/Cp1Z0NGj/Edulure-Logo.png" alt="Edulure logo" class="h-20 object-contain"></a>
+                                <h3 class="text-3xl font-semibold text-bw-slate">Edulure — Educational Community Platform</h3>
+                                <p class="text-slate-600">Bring together courses, communities, and live classrooms in a single immersive learning hub.</p>
+                                <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue hover:bg-bw-blue/10">Preview the Launch</a>
+                            </div>
+                            <div class="lg:col-span-8 space-y-6">
+                                <figure class="section-visual h-64">
+                                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Students learning online with digital devices" class="h-full w-full object-cover" loading="lazy">
+                                </figure>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Community Engine</p>
+                                        <p class="mt-3">Dynamic community feed, levels, and follower mechanics drive engagement and retention.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Learning Experience</p>
+                                        <p class="mt-3">Courses, drip content, assignments, and e-books with interactive learning and live classrooms.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Monetisation</p>
+                                        <p class="mt-3">Flexible paywalls, subscription tiers, and analytics for revenue optimisation.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Reach &amp; Access</p>
+                                        <p class="mt-3">Globalised experience with search engine tooling and a full Flutter mobile app.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Gigvora -->
+                    <article class="platform-card p-10" data-aos="fade-up" data-aos-delay="150">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                            <div class="lg:col-span-4 flex flex-col items-start space-y-4">
+                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/0yXKHcSm/Gigvora-Logo.png" alt="Gigvora logo" class="h-20 object-contain"></a>
+                                <h3 class="text-3xl font-semibold text-bw-slate">Gigvora — Freelance Marketplace &amp; Jobs Board</h3>
+                                <p class="text-slate-600">Unite talent, agencies, and employers through a powerful marketplace with real-time collaboration.</p>
+                                <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue hover:bg-bw-blue/10">Preview the Launch</a>
+                            </div>
+                            <div class="lg:col-span-8 space-y-6">
+                                <figure class="section-visual h-64">
+                                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Professionals collaborating in a modern office" class="h-full w-full object-cover" loading="lazy">
+                                </figure>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Marketplace Dynamics</p>
+                                        <p class="mt-3">Feature-rich gigs, project management, volunteer pathways, and agency oversight.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Talent Ecosystem</p>
+                                        <p class="mt-3">Experience launchpads, interviews, follows, groups, and a live feed for constant momentum.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Business Control</p>
+                                        <p class="mt-3">Budget tracking, company dashboards, and multi-team collaboration tools.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Everywhere Access</p>
+                                        <p class="mt-3">Flutter mobile application plus API endpoints for HRIS, ATS, and CRM integrations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Fixnova -->
+                    <article class="platform-card p-10" data-aos="fade-up" data-aos-delay="200">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                            <div class="lg:col-span-4 flex flex-col items-start space-y-4">
+                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/27fFjyQs/Fixnova-Logo-1.png" alt="Fixnova logo" class="h-20 object-contain"></a>
+                                <h3 class="text-3xl font-semibold text-bw-slate">Fixnova — On-Demand Services Platform</h3>
+                                <p class="text-slate-600">Deliver exceptional field services with precise zone control, resource management, and seamless customer booking.</p>
+                                <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue hover:bg-bw-blue/10">Preview the Launch</a>
+                            </div>
+                            <div class="lg:col-span-8 space-y-6">
+                                <figure class="section-visual h-64">
+                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Service professional preparing tools for deployment" class="h-full w-full object-cover" loading="lazy">
+                                </figure>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">On-Demand Core</p>
+                                        <p class="mt-3">Real-time zone tracking, intelligent scheduling, and service catalogues tailored to any market.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Operational Control</p>
+                                        <p class="mt-3">Company, provider, and servicemen management plus job allocation workflows.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Custom Workflows</p>
+                                        <p class="mt-3">Custom jobs feed, bidding and applications, and tooling/material rental coordination.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+                                        <p class="font-semibold text-bw-slate">Mobile Excellence</p>
+                                        <p class="mt-3">Field-ready Flutter application ensures providers and teams stay synced wherever they operate.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-slate-50">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center" data-aos="fade-up">
+                    <span class="inline-flex items-center rounded-full bg-bw-gold/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-gold">Enterprise Delivery</span>
+                    <h2 class="mt-5 text-4xl font-semibold text-bw-slate">We build anticipation and sustain momentum.</h2>
+                    <p class="mt-4 text-lg text-slate-600">From preview roadshows to white-glove onboarding, Blackwellen ensures every stakeholder is ready for the switch-on moment.</p>
+                </div>
+
+                <figure class="section-visual mt-16" data-aos="fade-up" data-aos-delay="80">
+                    <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Immersive product presentation in a theatre-style space" loading="lazy">
+                </figure>
+
+                <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-bw-slate">Immersive Previews</h3>
+                        <p class="mt-3 text-slate-600">Demo-ready builds, launch playbooks, and stakeholder workshops keep leadership aligned and excited.</p>
+                    </div>
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl" data-aos="fade-up" data-aos-delay="150">
+                        <h3 class="text-xl font-semibold text-bw-slate">Operational Readiness</h3>
+                        <p class="mt-3 text-slate-600">Data migrations, integrations, and governance frameworks delivered with turnkey documentation.</p>
+                    </div>
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-bw-slate">Momentum Marketing</h3>
+                        <p class="mt-3 text-slate-600">Launch campaigns, lifecycle messaging, and analytics ensure early wins turn into sustained growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline" class="py-24">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center" data-aos="fade-up">
+                    <span class="inline-flex items-center rounded-full bg-bw-blue/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue">Launch Timeline</span>
+                    <h2 class="mt-5 text-4xl font-semibold text-bw-slate">Mark the milestones—join the journey.</h2>
+                    <p class="mt-4 text-lg text-slate-600">Three platforms, staged releases, one cohesive roadmap towards a powerful Blackwellen ecosystem.</p>
+                </div>
+
+                <div class="relative mt-16 timeline">
+                    <div class="space-y-16">
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="50">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div class="md:text-right">
+                                    <h3 class="text-2xl font-semibold text-bw-slate">Q4 2024 — Edulure Early Access</h3>
+                                    <p class="mt-3 text-slate-600">Pilot programmes across universities and private academies with live classrooms and community levels activated.</p>
+                                </div>
+                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+                                    <p class="text-sm text-slate-600">Enterprise-grade onboarding, course migration services, and live instruction suites ready for deployment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+                                    <p class="text-sm text-slate-600">Gigvora introduces a unified gig economy, corporate procurement, and talent communities in one hub.</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold text-bw-slate">Q1 2025 — Gigvora Strategic Launch</h3>
+                                    <p class="mt-3 text-slate-600">Agency networks, companies, and headhunters gain budget management, groups, and live interview tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="150">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div class="md:text-right">
+                                    <h3 class="text-2xl font-semibold text-bw-slate">Q2 2025 — Fixnova Global Rollout</h3>
+                                    <p class="mt-3 text-slate-600">On-demand providers launch zone-controlled operations with custom jobs feeds and resource rental.</p>
+                                </div>
+                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+                                    <p class="text-sm text-slate-600">Providers can allocate jobs to servicemen, coordinate fleets, and sync data to the Flutter mobile suite.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+                                    <p class="text-sm text-slate-600">Unified analytics, federated login, and shared integrations create an ecosystem advantage.</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold text-bw-slate">Q3 2025 — Blackwellen Platform Suite</h3>
+                                    <p class="mt-3 text-slate-600">All three portals synchronise into one enterprise dashboard with cross-platform insights.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" class="py-24">
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div class="cta-gradient rounded-[32px] p-12 text-center text-white shadow-2xl" data-aos="fade-up">
+                    <h2 class="text-4xl font-semibold">Reserve your Blackwellen executive preview.</h2>
+                    <p class="mt-4 text-lg text-white/90">Gain early access to product demos, architecture documentation, and strategic onboarding slots before Edulure, Gigvora, and Fixnova debut.</p>
+                    <div class="mt-8 flex flex-wrap justify-center gap-4">
+                        <a href="mailto:launch@blackwellen.com" class="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-bw-blue shadow-lg shadow-white/40 transition hover:bg-slate-100">Request a Launch Consultation</a>
+                        <a href="privacy.html" class="inline-flex items-center rounded-full border border-white/80 px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white hover:bg-white/10">Review Privacy &amp; Governance</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div class="flex items-center space-x-4">
+                    <a href="https://imgbb.com/" class="flex-shrink-0" aria-label="Blackwellen Ltd" target="_blank" rel="noopener">
+                        <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen Ltd logo" class="h-12 w-auto">
+                    </a>
+                    <div>
+                        <p class="text-sm font-semibold text-bw-slate">Blackwellen Ltd</p>
+                        <p class="text-xs text-slate-500">Crafting premium digital platforms for the next wave of enterprise innovation.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm text-slate-600">
+                    <a href="#vision" class="footer-link hover:text-bw-blue">Vision</a>
+                    <a href="#platforms" class="footer-link hover:text-bw-blue">Platforms</a>
+                    <a href="#experience" class="footer-link hover:text-bw-blue">Enterprise</a>
+                    <a href="#timeline" class="footer-link hover:text-bw-blue">Timeline</a>
+                    <a href="#cta" class="footer-link hover:text-bw-blue">Partner</a>
+                    <a href="privacy.html" class="footer-link hover:text-bw-blue">Privacy</a>
+                </div>
+                <div class="text-sm text-slate-500">
+                    <p>&copy; <span id="year"></span> Blackwellen Ltd. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Initialize AOS
         AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
             once: true,
-            offset: 120
+            duration: 900,
+            easing: 'ease-out-quart'
         });
 
-        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-        }
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-2xl');
-            } else {
-                header.classList.remove('shadow-2xl');
-            }
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        const HERO_IMAGE_SOURCE = 'https://i.ibb.co/zTyTb4zw/tech-hero-nobg.png';
-        const HERO_FALLBACK_COLOR = '#06080B';
-
-        function createHeroVisual(heroMeta = {}) {
-            const heroVisual = document.getElementById('hero-visual');
-            if (!heroVisual) return;
-
-            const rootStyles = getComputedStyle(document.documentElement);
-            const heroSurfaceColorRaw = rootStyles.getPropertyValue('--hero-image-black');
-            const heroSurfaceColor = (heroSurfaceColorRaw && heroSurfaceColorRaw.trim()) || HERO_FALLBACK_COLOR;
-
-            heroVisual.style.backgroundColor = heroSurfaceColor;
-
-            const svgNS = 'http://www.w3.org/2000/svg';
-            const xlinkNS = 'http://www.w3.org/1999/xlink';
-            heroVisual.innerHTML = '';
-
-            const defaultWidth = 1600;
-            const defaultHeight = 1100;
-            const naturalWidth = Math.max(heroMeta.width || defaultWidth, 1);
-            const naturalHeight = Math.max(heroMeta.height || defaultHeight, 1);
-            heroVisual.style.setProperty('--hero-visual-aspect', `${naturalWidth} / ${naturalHeight}`);
-
-            const svg = document.createElementNS(svgNS, 'svg');
-            svg.setAttribute('viewBox', `0 0 ${naturalWidth} ${naturalHeight}`);
-            svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-
-            const defs = document.createElementNS(svgNS, 'defs');
-
-            const softLight = document.createElementNS(svgNS, 'linearGradient');
-            softLight.setAttribute('id', 'hero-soft-light');
-            softLight.setAttribute('x1', '0%');
-            softLight.setAttribute('y1', '0%');
-            softLight.setAttribute('x2', '100%');
-            softLight.setAttribute('y2', '0%');
-            [
-                { offset: '0%', color: heroSurfaceColor, opacity: '0.0' },
-                { offset: '35%', color: '#1A1A1F', opacity: '0.25' },
-                { offset: '70%', color: '#1A1A1F', opacity: '0.15' },
-                { offset: '100%', color: heroSurfaceColor, opacity: '0.0' }
-            ].forEach(stopData => {
-                const stop = document.createElementNS(svgNS, 'stop');
-                stop.setAttribute('offset', stopData.offset);
-                stop.setAttribute('stop-color', stopData.color);
-                stop.setAttribute('stop-opacity', stopData.opacity);
-                softLight.appendChild(stop);
-            });
-
-            defs.appendChild(softLight);
-
-            const bottomBlurFilter = document.createElementNS(svgNS, 'filter');
-            bottomBlurFilter.setAttribute('id', 'hero-bottom-blur');
-            bottomBlurFilter.setAttribute('x', '-25%');
-            bottomBlurFilter.setAttribute('y', '-25%');
-            bottomBlurFilter.setAttribute('width', '150%');
-            bottomBlurFilter.setAttribute('height', '150%');
-
-            const blurStrength = document.createElementNS(svgNS, 'feGaussianBlur');
-            blurStrength.setAttribute('stdDeviation', `${Math.max(naturalWidth, naturalHeight) * 0.035}`);
-            blurStrength.setAttribute('edgeMode', 'duplicate');
-            bottomBlurFilter.appendChild(blurStrength);
-
-            defs.appendChild(bottomBlurFilter);
-
-            const bottomFade = document.createElementNS(svgNS, 'linearGradient');
-            bottomFade.setAttribute('id', 'hero-bottom-fade');
-            bottomFade.setAttribute('x1', '0%');
-            bottomFade.setAttribute('y1', '0%');
-            bottomFade.setAttribute('x2', '0%');
-            bottomFade.setAttribute('y2', '100%');
-            [
-                { offset: '0%', color: '#FFFFFF', opacity: '1' },
-                { offset: '55%', color: '#FFFFFF', opacity: '0.85' },
-                { offset: '100%', color: '#FFFFFF', opacity: '0' }
-            ].forEach(stopData => {
-                const stop = document.createElementNS(svgNS, 'stop');
-                stop.setAttribute('offset', stopData.offset);
-                stop.setAttribute('stop-color', stopData.color);
-                stop.setAttribute('stop-opacity', stopData.opacity);
-                bottomFade.appendChild(stop);
-            });
-            defs.appendChild(bottomFade);
-
-            const bottomMask = document.createElementNS(svgNS, 'mask');
-            bottomMask.setAttribute('id', 'hero-bottom-mask');
-            bottomMask.setAttribute('maskUnits', 'userSpaceOnUse');
-            const maskRect = document.createElementNS(svgNS, 'rect');
-            maskRect.setAttribute('width', naturalWidth);
-            maskRect.setAttribute('height', naturalHeight);
-            maskRect.setAttribute('fill', 'url(#hero-bottom-fade)');
-            bottomMask.appendChild(maskRect);
-            defs.appendChild(bottomMask);
-
-            const bottomClip = document.createElementNS(svgNS, 'clipPath');
-            bottomClip.setAttribute('id', 'hero-bottom-clip');
-            const clipRect = document.createElementNS(svgNS, 'rect');
-            clipRect.setAttribute('x', '0');
-            clipRect.setAttribute('y', `${naturalHeight * 0.58}`);
-            clipRect.setAttribute('width', naturalWidth);
-            clipRect.setAttribute('height', `${naturalHeight * 0.42}`);
-            bottomClip.appendChild(clipRect);
-            defs.appendChild(bottomClip);
-            svg.appendChild(defs);
-
-            const background = document.createElementNS(svgNS, 'rect');
-            background.setAttribute('width', naturalWidth);
-            background.setAttribute('height', naturalHeight);
-            background.setAttribute('fill', heroSurfaceColor);
-
-            const heroImage = document.createElementNS(svgNS, 'image');
-            heroImage.setAttribute('width', naturalWidth);
-            heroImage.setAttribute('height', naturalHeight);
-            heroImage.setAttributeNS(xlinkNS, 'href', HERO_IMAGE_SOURCE);
-            heroImage.setAttribute('href', HERO_IMAGE_SOURCE);
-            heroImage.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-            heroImage.setAttribute('style', 'mix-blend-mode: normal; image-rendering: auto;');
-
-            const blurredBase = document.createElementNS(svgNS, 'image');
-            blurredBase.setAttribute('width', naturalWidth);
-            blurredBase.setAttribute('height', naturalHeight);
-            blurredBase.setAttributeNS(xlinkNS, 'href', HERO_IMAGE_SOURCE);
-            blurredBase.setAttribute('href', HERO_IMAGE_SOURCE);
-            blurredBase.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-            blurredBase.setAttribute('filter', 'url(#hero-bottom-blur)');
-            blurredBase.setAttribute('mask', 'url(#hero-bottom-mask)');
-
-            const blurredGroup = document.createElementNS(svgNS, 'g');
-            blurredGroup.setAttribute('clip-path', 'url(#hero-bottom-clip)');
-            blurredGroup.appendChild(blurredBase);
-
-            const overlay = document.createElementNS(svgNS, 'rect');
-            overlay.setAttribute('width', naturalWidth);
-            overlay.setAttribute('height', naturalHeight);
-            overlay.setAttribute('fill', 'url(#hero-soft-light)');
-            overlay.setAttribute('opacity', '0.18');
-
-            svg.appendChild(background);
-            svg.appendChild(blurredGroup);
-            svg.appendChild(heroImage);
-            svg.appendChild(overlay);
-
-            heroVisual.appendChild(svg);
-        }
-
-        function analyzeHeroImage(imageUrl, fallbackColor) {
-            return new Promise(resolve => {
-                const image = new Image();
-                let settled = false;
-
-                const defaultWidth = 1600;
-                const defaultHeight = 1100;
-
-                const resolveWithData = (color, width, height) => {
-                    if (!settled) {
-                        settled = true;
-                        resolve({
-                            color: color || fallbackColor,
-                            width: width || defaultWidth,
-                            height: height || defaultHeight
-                        });
-                    }
-                };
-
-                image.crossOrigin = 'anonymous';
-                image.onload = () => {
-                    try {
-                        const sampleSize = 32;
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        const naturalWidth = image.naturalWidth || image.width;
-                        const naturalHeight = image.naturalHeight || image.height;
-                        const width = Math.min(sampleSize, naturalWidth);
-                        const height = Math.min(sampleSize, naturalHeight);
-                        canvas.width = width;
-                        canvas.height = height;
-                        context.drawImage(image, 0, 0, width, height);
-                        const data = context.getImageData(0, 0, width, height).data;
-                        let r = 0;
-                        let g = 0;
-                        let b = 0;
-                        let count = 0;
-                        for (let i = 0; i < data.length; i += 4) {
-                            r += data[i];
-                            g += data[i + 1];
-                            b += data[i + 2];
-                            count++;
-                        }
-                        if (count === 0) {
-                            resolveWithData(fallbackColor, naturalWidth, naturalHeight);
-                            return;
-                        }
-                        const toHex = value => value.toString(16).padStart(2, '0');
-                        const color = `#${toHex(Math.round(r / count))}${toHex(Math.round(g / count))}${toHex(Math.round(b / count))}`;
-                        resolveWithData(color, naturalWidth, naturalHeight);
-                    } catch (error) {
-                        resolveWithData(fallbackColor, image.naturalWidth || image.width, image.naturalHeight || image.height);
-                    }
-                };
-
-                image.onerror = () => resolveWithData(fallbackColor);
-                image.crossOrigin = 'anonymous';
-                image.src = imageUrl;
-
-                setTimeout(() => resolveWithData(fallbackColor), 4000);
-            });
-        }
-
-        async function syncHeroSurfaceColor() {
-            const analysis = await analyzeHeroImage(HERO_IMAGE_SOURCE, HERO_FALLBACK_COLOR);
-            document.documentElement.style.setProperty('--hero-image-black', analysis.color);
-            return analysis;
-        }
-
-        function applyPremiumStyling() {
-            const palette = {
-                base: '#3B82F6',
-                highlight: '#93C5FD',
-                shadow: '#0B1F4B'
-            };
-
-            const root = document.documentElement;
-            root.style.setProperty('--crestgate-accent-base', palette.base);
-            root.style.setProperty('--crestgate-accent-highlight', palette.highlight);
-            root.style.setProperty('--crestgate-accent-shadow', palette.shadow);
-
-            const header = document.querySelector('header');
-            if (header) {
-                header.style.background = 'linear-gradient(135deg, rgba(5, 5, 7, 0.95), rgba(10, 10, 14, 0.78))';
-                header.style.borderBottom = '1px solid rgba(96, 165, 250, 0.18)';
-                header.style.boxShadow = '0 25px 65px rgba(0, 0, 0, 0.65)';
-            }
-
-            const footer = document.querySelector('footer');
-            if (footer) {
-                footer.style.background = 'linear-gradient(160deg, rgba(5, 5, 7, 0.95), rgba(14, 12, 8, 0.78))';
-                footer.style.borderTop = '1px solid rgba(96, 165, 250, 0.18)';
-                footer.style.boxShadow = '0 -20px 65px rgba(0, 0, 0, 0.6)';
-            }
-
-            document.querySelectorAll('.glass-card').forEach(card => {
-                card.style.border = '1px solid rgba(96, 165, 250, 0.18)';
-                card.style.boxShadow = '0 45px 95px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)';
-                card.style.background = 'linear-gradient(145deg, rgba(17, 17, 24, 0.88), rgba(17, 17, 24, 0.62))';
-            });
-
-            document.querySelectorAll('.scaffold-block, .scaffold-panel, .scaffold-strip').forEach(scaffold => {
-                scaffold.style.borderColor = 'rgba(96, 165, 250, 0.38)';
-                scaffold.style.boxShadow = '0 28px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)';
-            });
-
-            document.querySelectorAll('[data-accent-button]').forEach(button => {
-                if (!button.querySelector('.premium-shine')) {
-                    const shine = document.createElement('span');
-                    shine.className = 'premium-shine';
-                    button.appendChild(shine);
-                }
-                const shineEl = button.querySelector('.premium-shine');
-                button.style.background = `linear-gradient(135deg, ${palette.highlight}, ${palette.base} 55%, ${palette.shadow})`;
-                button.style.color = '#050507';
-                button.style.borderRadius = '9999px';
-                button.style.border = '1px solid rgba(186, 230, 253, 0.65)';
-                button.style.boxShadow = '0 25px 60px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.45)';
-                button.style.transition = 'all 0.45s ease';
-                button.addEventListener('mousemove', event => {
-                    const rect = button.getBoundingClientRect();
-                    shineEl.style.opacity = '1';
-                    shineEl.style.left = `${event.clientX - rect.left}px`;
-                    shineEl.style.top = `${event.clientY - rect.top}px`;
-                });
-                button.addEventListener('mouseleave', () => {
-                    shineEl.style.opacity = '0';
-                });
-            });
-
-            document.querySelectorAll('[data-accent-outline]').forEach(button => {
-                if (!button.querySelector('.premium-shine')) {
-                    const shine = document.createElement('span');
-                    shine.className = 'premium-shine';
-                    button.appendChild(shine);
-                }
-                const shineEl = button.querySelector('.premium-shine');
-                button.style.border = '1px solid rgba(96, 165, 250, 0.45)';
-                button.style.color = palette.highlight;
-                button.style.backdropFilter = 'blur(6px)';
-                button.style.boxShadow = '0 18px 48px rgba(11, 31, 75, 0.35)';
-                button.style.transition = 'all 0.4s ease';
-                button.addEventListener('mouseenter', () => {
-                    button.style.background = 'linear-gradient(135deg, rgba(96, 165, 250, 0.08), rgba(11, 31, 75, 0.25))';
-                });
-                button.addEventListener('mouseleave', () => {
-                    button.style.background = 'transparent';
-                    shineEl.style.opacity = '0';
-                });
-                button.addEventListener('mousemove', event => {
-                    const rect = button.getBoundingClientRect();
-                    shineEl.style.opacity = '0.85';
-                    shineEl.style.left = `${event.clientX - rect.left}px`;
-                    shineEl.style.top = `${event.clientY - rect.top}px`;
-                });
-            });
-
-            document.querySelectorAll('.text-gilded').forEach(el => {
-                el.style.textShadow = '0 0 18px rgba(147, 197, 253, 0.45)';
-            });
-        }
-
-        function initNetwork() {
-            const networkCanvas = document.getElementById('constellation-canvas');
-            if (!networkCanvas) return;
-
-            const ctx = networkCanvas.getContext('2d');
-            let width = 0;
-            let height = 0;
-            let nodes = [];
-            let backgroundGradient;
-
-            function createBackgroundGradient() {
-                backgroundGradient = ctx.createRadialGradient(width * 0.75, height * 0.35, 0, width * 0.75, height * 0.35, Math.max(width, height));
-                backgroundGradient.addColorStop(0, 'rgba(186, 230, 253, 0.18)');
-                backgroundGradient.addColorStop(0.45, 'rgba(37, 99, 235, 0.15)');
-                backgroundGradient.addColorStop(1, 'rgba(5, 5, 7, 0)');
-            }
-
-            function createNodes() {
-                const nodeCount = Math.max(24, Math.floor((width * height) / 12000));
-                nodes = Array.from({ length: nodeCount }, () => ({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.45,
-                    vy: (Math.random() - 0.5) * 0.45,
-                    r: Math.random() * 1.6 + 0.9
-                }));
-            }
-
-            function initCanvas() {
-                const rect = networkCanvas.getBoundingClientRect();
-                const dpr = window.devicePixelRatio || 1;
-                width = rect.width;
-                height = rect.height;
-                networkCanvas.width = rect.width * dpr;
-                networkCanvas.height = rect.height * dpr;
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                createBackgroundGradient();
-                createNodes();
-            }
-
-            function wrapNode(node) {
-                if (node.x < -40) node.x = width + 40;
-                if (node.x > width + 40) node.x = -40;
-                if (node.y < -40) node.y = height + 40;
-                if (node.y > height + 40) node.y = -40;
-            }
-
-            function drawNetwork() {
-                ctx.clearRect(0, 0, width, height);
-                ctx.fillStyle = '#050507';
-                ctx.fillRect(0, 0, width, height);
-                if (backgroundGradient) {
-                    ctx.fillStyle = backgroundGradient;
-                    ctx.fillRect(0, 0, width, height);
-                }
-
-                nodes.forEach((node, i) => {
-                    node.x += node.vx;
-                    node.y += node.vy;
-                    wrapNode(node);
-
-                    const glow = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 14);
-                    glow.addColorStop(0, 'rgba(224, 242, 254, 0.95)');
-                    glow.addColorStop(0.35, 'rgba(96, 165, 250, 0.55)');
-                    glow.addColorStop(1, 'rgba(5, 5, 7, 0)');
-                    ctx.beginPath();
-                    ctx.fillStyle = glow;
-                    ctx.arc(node.x, node.y, node.r * 3.5, 0, Math.PI * 2);
-                    ctx.fill();
-
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(96, 165, 250, 0.9)';
-                    ctx.fill();
-
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const other = nodes[j];
-                        const dist = Math.hypot(node.x - other.x, node.y - other.y);
-                        if (dist < 160) {
-                            const alpha = 1 - dist / 160;
-                            const lineGradient = ctx.createLinearGradient(node.x, node.y, other.x, other.y);
-                            lineGradient.addColorStop(0, `rgba(96, 165, 250, ${alpha * 0.8})`);
-                            lineGradient.addColorStop(1, `rgba(11, 31, 75, ${alpha * 0.55})`);
-                            ctx.strokeStyle = lineGradient;
-                            ctx.lineWidth = 0.6 + alpha * 1.1;
-                            ctx.beginPath();
-                            ctx.moveTo(node.x, node.y);
-                            ctx.lineTo(other.x, other.y);
-                            ctx.stroke();
-                        }
-                    }
-
-                    if (Math.random() < 0.002) {
-                        const sparkle = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 18);
-                        sparkle.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
-                        sparkle.addColorStop(0.4, 'rgba(96, 165, 250, 0.5)');
-                        sparkle.addColorStop(1, 'rgba(5, 5, 7, 0)');
-                        ctx.fillStyle = sparkle;
-                        ctx.beginPath();
-                        ctx.arc(node.x, node.y, node.r * 6, 0, Math.PI * 2);
-                        ctx.fill();
-                    }
-                });
-
-                requestAnimationFrame(drawNetwork);
-            }
-
-            initCanvas();
-            drawNetwork();
-
-            window.addEventListener('resize', initCanvas);
-        }
-
-        syncHeroSurfaceColor()
-            .then(heroMeta => createHeroVisual(heroMeta))
-            .catch(() => {
-                document.documentElement.style.setProperty('--hero-image-black', HERO_FALLBACK_COLOR);
-                createHeroVisual();
-            });
-        applyPremiumStyling();
-        initNetwork();
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
