@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackwellen Ltd | Enterprise Web Portals for Education, Talent &amp; Services</title>
-    <meta name="description" content="Discover Blackwellen Ltd's enterprise-grade platforms—Edulure, Gigvora, and Fixnova—delivering connected learning, freelance marketplaces, and on-demand service operations.">
-    <meta name="keywords" content="Blackwellen, Edulure, Gigvora, Fixnova, enterprise web portal, education platform, freelance marketplace, on-demand services, Flutter apps, SaaS launch">
-    <meta property="og:title" content="Blackwellen Ltd | Enterprise Web Portals for Education, Talent &amp; Services">
-    <meta property="og:description" content="Preview the Edulure, Gigvora, and Fixnova platforms—engineered by Blackwellen Ltd for global enterprises and ambitious operators.">
+    <title>Blackwellen | Enterprise Portals &amp; Tech Brands for Professionals</title>
+    <meta name="description" content="Blackwellen creates enterprise portals and tech brands for professionals, elevating digital experiences across education, finance, and talent ecosystems.">
+    <meta name="keywords" content="Blackwellen, enterprise portals, tech brands, professional platforms, Finova, Edulure, Gigvora, ESG, careers">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Blackwellen">
+    <meta property="og:title" content="Blackwellen | Enterprise Portals &amp; Tech Brands for Professionals">
+    <meta property="og:description" content="Discover how Blackwellen designs enterprise-grade digital brands for professionals across sectors.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://blackwellen.com/">
     <meta property="og:image" content="https://i.ibb.co/XfDWpPpM/11.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/PzjD3XQf/12-cropped.png">
     <link rel="shortcut icon" href="https://i.ibb.co/PzjD3XQf/12-cropped.png">
 
-    <!-- Google Fonts - Poppins -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Blackwellen",
+        "url": "https://blackwellen.com/",
+        "logo": "https://i.ibb.co/XfDWpPpM/11.png",
+        "description": "Blackwellen creates enterprise portals and tech brands for professionals across education, finance, and talent ecosystems.",
+        "email": "contact@blackwellen.com",
+        "sameAs": [
+            "https://finova.com",
+            "https://edulure.com",
+            "https://gigvora.com"
+        ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -34,10 +49,11 @@
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        'bw-blue': '#0039A6',
-                        'bw-gold': '#D4AF37',
-                        'bw-sky': '#0EA5E9',
-                        'bw-slate': '#1F2937'
+                        'charcoal': '#1F2933',
+                        'slate-ink': '#111827',
+                        'soft-silver': '#E5E7EB',
+                        'graphite': '#374151',
+                        'pearl': '#F8FAFC'
                     }
                 }
             }
@@ -45,528 +61,382 @@
     </script>
 
     <style>
+        :root {
+            color-scheme: light;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background: #ffffff;
-            color: #0f172a;
+            background: #f4f4f5;
+            color: #111827;
         }
 
-        .hero-section {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(37, 99, 235, 0.05));
+        .shadow-elevated {
+            box-shadow: 0 40px 90px -45px rgba(17, 24, 39, 0.35);
         }
 
-        .hero-sheen::before {
-            content: '';
-            position: absolute;
-            inset: -20% -10% auto -10%;
-            height: 420px;
-            background: radial-gradient(circle at top, rgba(14, 165, 233, 0.18), transparent 65%);
-            z-index: 0;
+        .card-sheen {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.88));
+            border: 1px solid rgba(15, 23, 42, 0.08);
         }
 
-        .hero-sheen::after {
-            content: '';
-            position: absolute;
-            inset: auto -10% -20% -10%;
-            height: 360px;
-            background: radial-gradient(circle at bottom, rgba(212, 175, 55, 0.2), transparent 70%);
-            z-index: 0;
-        }
-
-        .hero-sheen > * {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-visual {
-            position: relative;
-            overflow: hidden;
+        .section-frame {
             border-radius: 32px;
-            box-shadow: 0 40px 80px -30px rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(17, 24, 39, 0.06);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 24px 70px -40px rgba(15, 23, 42, 0.28);
         }
 
-        .hero-visual::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.4) 100%);
-            z-index: 1;
-            pointer-events: none;
+        .neutral-button {
+            background: linear-gradient(135deg, #111827, #374151);
         }
 
-        .hero-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            position: relative;
-            z-index: 0;
+        .neutral-button:hover {
+            background: linear-gradient(135deg, #0f172a, #1f2937);
         }
 
-        .feature-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(248, 250, 252, 0.85));
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            box-shadow: 0 35px 60px -40px rgba(15, 23, 42, 0.35);
+        .outline-button {
+            border-color: rgba(55, 65, 81, 0.4);
         }
 
-        .platform-card {
-            background: #ffffff;
-            border-radius: 24px;
-            border: 1px solid rgba(148, 163, 184, 0.35);
-            box-shadow: 0 32px 70px -36px rgba(15, 23, 42, 0.25);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .platform-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 38px 90px -32px rgba(14, 116, 144, 0.35);
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            width: 4px;
-            margin: 0 auto;
-            background: linear-gradient(to bottom, rgba(14, 165, 233, 0.4), rgba(212, 175, 55, 0.4));
-        }
-
-        .timeline-step {
-            position: relative;
-        }
-
-        .timeline-step::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0.5rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 999px;
-            background: #ffffff;
-            border: 4px solid #0ea5e9;
-            box-shadow: 0 0 0 6px rgba(14, 165, 233, 0.12);
-        }
-
-        .timeline-step:nth-child(odd)::before {
-            border-color: #d4af37;
-            box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.12);
-        }
-
-        .cta-gradient {
-            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 45%, #d4af37 100%);
-        }
-
-        .footer-link {
-            color: #0f172a;
-        }
-
-        .section-visual {
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 28px 60px -32px rgba(15, 23, 42, 0.4);
-        }
-
-        .section-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        .outline-button:hover {
+            background: rgba(17, 24, 39, 0.08);
         }
     </style>
 </head>
-<body class="bg-white text-slate-900">
-    <!-- Sticky Header -->
+<body class="bg-pearl text-slate-ink">
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between py-4">
-                <a href="https://imgbb.com/" class="flex-shrink-0" aria-label="Blackwellen Ltd" target="_blank" rel="noopener">
-                    <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen Ltd logo" class="h-12 w-auto md:h-14">
-                </a>
-                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#vision" class="hover:text-bw-blue transition-colors">Vision</a>
-                    <a href="#platforms" class="hover:text-bw-blue transition-colors">Platforms</a>
-                    <a href="#experience" class="hover:text-bw-blue transition-colors">Enterprise</a>
-                    <a href="#timeline" class="hover:text-bw-blue transition-colors">Timeline</a>
-                    <a href="#cta" class="hover:text-bw-blue transition-colors">Partner</a>
-                    <a href="privacy.html" class="hover:text-bw-blue transition-colors">Privacy</a>
-                </div>
-                <div class="hidden lg:block">
-                    <a href="#cta" class="inline-flex items-center rounded-full border border-transparent bg-bw-blue px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-bw-blue/40 transition hover:bg-bw-sky">
-                        Join the Launch List
-                    </a>
-                </div>
-                <button id="mobile-menu-button" class="lg:hidden text-bw-blue focus:outline-none" aria-label="Open navigation">
-                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+            <a href="/" class="flex items-center space-x-3" aria-label="Blackwellen">
+                <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-12 w-auto">
+                <span class="text-sm font-semibold tracking-[0.35em] uppercase text-slate-500">Blackwellen</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-500">
+                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="#values" class="hover:text-slate-900 transition-colors">Values</a>
+                <a href="#culture" class="hover:text-slate-900 transition-colors">Culture</a>
+                <a href="#goals" class="hover:text-slate-900 transition-colors">Goals</a>
+                <a href="#portals" class="hover:text-slate-900 transition-colors">Portals</a>
+                <a href="/careers/" class="hover:text-slate-900 transition-colors">Careers</a>
+                <a href="/esg-csr/" class="hover:text-slate-900 transition-colors">ESG &amp; CSR</a>
             </div>
-            <div id="mobile-menu" class="hidden lg:hidden pb-6">
-                <div class="flex flex-col space-y-4 text-sm font-semibold text-slate-600">
-                    <a href="#vision" class="hover:text-bw-blue transition-colors">Vision</a>
-                    <a href="#platforms" class="hover:text-bw-blue transition-colors">Platforms</a>
-                    <a href="#experience" class="hover:text-bw-blue transition-colors">Enterprise</a>
-                    <a href="#timeline" class="hover:text-bw-blue transition-colors">Timeline</a>
-                    <a href="#cta" class="hover:text-bw-blue transition-colors">Partner</a>
-                    <a href="privacy.html" class="hover:text-bw-blue transition-colors">Privacy</a>
-                </div>
-                <a href="#cta" class="mt-6 inline-flex items-center justify-center rounded-full border border-transparent bg-bw-blue px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white shadow-lg shadow-bw-blue/40 transition hover:bg-bw-sky">
-                    Join the Launch List
+            <div class="hidden lg:block">
+                <a href="mailto:contact@blackwellen.com" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">
+                    Contact
                 </a>
             </div>
+            <button id="mobile-menu-button" class="lg:hidden text-slate-700 focus:outline-none" aria-label="Open navigation">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </nav>
+        <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white lg:hidden">
+            <div class="flex flex-col space-y-4 px-4 py-6 text-sm font-semibold text-slate-600">
+                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="#values" class="hover:text-slate-900 transition-colors">Values</a>
+                <a href="#culture" class="hover:text-slate-900 transition-colors">Culture</a>
+                <a href="#goals" class="hover:text-slate-900 transition-colors">Goals</a>
+                <a href="#portals" class="hover:text-slate-900 transition-colors">Portals</a>
+                <a href="/careers/" class="hover:text-slate-900 transition-colors">Careers</a>
+                <a href="/esg-csr/" class="hover:text-slate-900 transition-colors">ESG &amp; CSR</a>
+                <a href="/privacy/" class="hover:text-slate-900 transition-colors">Privacy</a>
+            </div>
+            <div class="px-4 pb-6">
+                <a href="mailto:contact@blackwellen.com" class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-800 outline-button transition">
+                    Contact
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main class="relative" id="top">
-        <!-- Hero Section -->
-        <section class="relative hero-section pt-32 pb-24">
-            <div class="hero-sheen absolute inset-0"></div>
+    <main class="pt-24 lg:pt-28">
+        <section class="relative overflow-hidden bg-white pt-20 pb-20 lg:pb-28" id="hero">
+            <div class="w-full h-[45vh] sm:h-[50vh] lg:hidden" data-aos="fade-up">
+                <img src="https://i.ibb.co/jkqbMrQL/dramatic-black-white-sea-landscape.jpg" alt="Monochrome coastline with dramatic clouds" class="h-full w-full object-cover">
+            </div>
+            <div class="hidden lg:flex absolute inset-y-0 right-0 w-[48%] items-center pr-6" data-aos="fade-left">
+                <div class="h-[68%] w-full overflow-hidden rounded-[36px] shadow-elevated">
+                    <img src="https://i.ibb.co/jkqbMrQL/dramatic-black-white-sea-landscape.jpg" alt="Monochrome coastline with dramatic clouds" class="h-full w-full object-cover">
+                </div>
+            </div>
             <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-start">
-                    <div class="lg:col-span-6 space-y-6" data-aos="fade-up">
-                        <span class="inline-flex items-center rounded-full bg-bw-blue/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue">Coming Soon • 2024 &ndash; 2025</span>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-bw-slate">
-                            Enterprise Portals Engineered for the Next Digital Frontier
-                        </h1>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Blackwellen Ltd is preparing an intelligent suite of SaaS portals designed to power learning ecosystems, freelance talent networks, and on-demand field operations. Each platform is architected for international scale, measurable ROI, and an executive-ready experience from day one.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="#platforms" class="inline-flex items-center rounded-full border border-transparent bg-bw-blue px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white shadow-lg shadow-bw-blue/40 transition hover:bg-bw-sky">
-                                Explore the Platforms
-                            </a>
-                            <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-bw-blue transition hover:bg-bw-blue/10">
-                                Schedule an Executive Briefing
-                            </a>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-6 lg:-mt-8" data-aos="fade-left" data-aos-delay="150">
-                        <div class="hero-visual">
-                            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Executive leadership reviewing enterprise analytics">
-                            <div class="absolute inset-x-0 bottom-0 z-10 p-8 md:p-10 text-white">
-                                <p class="text-sm uppercase tracking-[0.4em] text-white/80">Blackwellen Platform Studio</p>
-                                <h2 class="mt-3 text-2xl font-semibold">Edulure • Gigvora • Fixnova</h2>
-                                <p class="mt-3 text-white/80 text-sm md:text-base leading-relaxed">Dedicated strategists, engineers, and designers deliver future-proof architectures, Flutter-native companions, and measurable launch playbooks for every release.</p>
-                            </div>
-                        </div>
+                <div class="max-w-3xl space-y-6 lg:w-[48%]" data-aos="fade-up">
+                    <p class="text-xs uppercase tracking-[0.4em] text-slate-500">We create tech brands for professionals.</p>
+                    <h1 class="text-4xl md:text-5xl font-semibold text-slate-900">Enterprise Portals Refined</h1>
+                    <p class="text-lg text-slate-600">Blackwellen shapes digital platforms that deliver executive-grade experiences across education, finance, and talent ecosystems.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#portals" class="inline-flex items-center rounded-full border border-transparent px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">
+                            Explore Portals
+                        </a>
+                        <a href="mailto:contact@blackwellen.com" class="inline-flex items-center rounded-full border px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-800 outline-button transition">
+                            Connect with Us
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Vision Section -->
-        <section id="vision" class="py-20 bg-slate-50">
+        <section id="about" class="py-20">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div data-aos="fade-right">
-                        <span class="inline-flex items-center rounded-full bg-bw-gold/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-gold">Why Blackwellen</span>
-                        <h2 class="mt-5 text-3xl md:text-4xl font-semibold text-bw-slate">A disciplined investment house with a product obsession.</h2>
-                        <p class="mt-5 text-lg text-slate-600 leading-relaxed">
-                            We fuse venture-grade strategy with engineering craftsmanship to launch portals that outperform generic SaaS. From discovery to deployment, our delivery methodology addresses security, localisation, compliance, and growth marketing long before go-live.
-                        </p>
-                        <p class="mt-4 text-slate-600 leading-relaxed">
-                            Edulure, Gigvora, and Fixnova are the culmination of market research across universities, enterprises, and service networks. Every module is validated through stakeholder councils so your team can activate new revenue on a proven foundation.
-                        </p>
-                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
-                            <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
-                                <p class="text-xs uppercase tracking-[0.3em] text-bw-blue">Operating Model</p>
-                                <p class="mt-3 font-semibold text-bw-slate">Central governance with agile product teams focused on outcomes.</p>
+                <div class="section-frame p-10 lg:p-16" data-aos="fade-up">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-5 space-y-4">
+                            <span class="inline-flex items-center rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">About Us</span>
+                            <h2 class="text-3xl font-semibold text-slate-900">Blackwellen</h2>
+                            <p class="text-slate-600">Founded in October 2025, Blackwellen architects corporate-grade portals with the precision of a venture studio and the rigour of an enterprise consultancy.</p>
+                            <p class="text-slate-600">We work with professional communities to craft brand systems, infrastructure, and launch playbooks that feel purposeful from the first interaction.</p>
+                        </div>
+                        <div class="lg:col-span-7">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="card-sheen rounded-3xl p-8 shadow-elevated">
+                                    <h3 class="text-lg font-semibold text-slate-900">Strategic Design</h3>
+                                    <p class="mt-3 text-sm text-slate-600">Brand, UX, and platform decisions anchored in stakeholder needs and measurable objectives.</p>
+                                </div>
+                                <div class="card-sheen rounded-3xl p-8 shadow-elevated">
+                                    <h3 class="text-lg font-semibold text-slate-900">Operational Focus</h3>
+                                    <p class="mt-3 text-sm text-slate-600">Compliance, localisation, and governance baked into the platform foundation.</p>
+                                </div>
+                                <div class="card-sheen rounded-3xl p-8 shadow-elevated">
+                                    <h3 class="text-lg font-semibold text-slate-900">Professional Craft</h3>
+                                    <p class="mt-3 text-sm text-slate-600">Interfaces and service layers purpose-built for executive audiences and specialist teams.</p>
+                                </div>
+                                <div class="card-sheen rounded-3xl p-8 shadow-elevated">
+                                    <h3 class="text-lg font-semibold text-slate-900">Sustainable Growth</h3>
+                                    <p class="mt-3 text-sm text-slate-600">Scalable architectures with responsible data practices and ESG-aligned metrics.</p>
+                                </div>
                             </div>
-                            <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
-                                <p class="text-xs uppercase tracking-[0.3em] text-bw-blue">Launch Network</p>
-                                <p class="mt-3 font-semibold text-bw-slate">Global partner roster for payments, compliance, support, and marketing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-8" data-aos="fade-left" data-aos-delay="150">
-                        <figure class="section-visual">
-                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Executives reviewing product roadmaps in a bright office" loading="lazy">
-                        </figure>
-                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
-                            <h3 class="text-xl font-semibold text-bw-slate">Enterprise Confidence</h3>
-                            <p class="mt-3 text-slate-600">Each platform is built for uptime, compliance, and integration with leading cloud services. Expect ISO-aligned processes, SOC-ready documentation, and accessible UX from day one.</p>
-                        </div>
-                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
-                            <h3 class="text-xl font-semibold text-bw-slate">Revenue Momentum</h3>
-                            <p class="mt-3 text-slate-600">Subscription engines, paywall controls, and monetisation paths are part of the base build—so your go-to-market strategy can start on launch day.</p>
-                        </div>
-                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
-                            <h3 class="text-xl font-semibold text-bw-slate">User Delight</h3>
-                            <p class="mt-3 text-slate-600">We obsess over usability, from micro-interactions to localisation. Expect cohesive visuals, purposeful animations, and native mobile parity.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Platforms Section -->
-        <section id="platforms" class="py-24">
+        <section id="values" class="py-20 bg-slate-50">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-                    <span class="inline-flex items-center rounded-full bg-bw-blue/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue">Platform Portfolio</span>
-                    <h2 class="mt-5 text-4xl font-semibold text-bw-slate">Three portals, one vision: transform how communities learn, work, and thrive.</h2>
-                    <p class="mt-4 text-lg text-slate-600">Each platform is engineered with signature brand identities, premium UX, and battle-tested feature sets ready for enterprise roll-out.</p>
+                    <span class="inline-flex items-center rounded-full bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Our Values</span>
+                    <h2 class="mt-5 text-3xl font-semibold text-slate-900">Principles that anchor every release</h2>
                 </div>
-
-                <div class="mt-16 grid grid-cols-1 gap-12">
-                    <!-- Edulure -->
-                    <article class="platform-card p-10" data-aos="fade-up" data-aos-delay="100">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            <div class="lg:col-span-4 flex flex-col items-start space-y-4">
-                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/Cp1Z0NGj/Edulure-Logo.png" alt="Edulure logo" class="h-20 object-contain"></a>
-                                <h3 class="text-3xl font-semibold text-bw-slate">Edulure — Educational Community Platform</h3>
-                                <p class="text-slate-600">Bring together courses, communities, and live classrooms in a single immersive learning hub.</p>
-                                <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue hover:bg-bw-blue/10">Preview the Launch</a>
-                            </div>
-                            <div class="lg:col-span-8 space-y-6">
-                                <figure class="section-visual h-64">
-                                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Students learning online with digital devices" class="h-full w-full object-cover" loading="lazy">
-                                </figure>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Community Engine</p>
-                                        <p class="mt-3">Dynamic community feed, levels, and follower mechanics drive engagement and retention.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Learning Experience</p>
-                                        <p class="mt-3">Courses, drip content, assignments, and e-books with interactive learning and live classrooms.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Monetisation</p>
-                                        <p class="mt-3">Flexible paywalls, subscription tiers, and analytics for revenue optimisation.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Reach &amp; Access</p>
-                                        <p class="mt-3">Globalised experience with search engine tooling and a full Flutter mobile app.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Gigvora -->
-                    <article class="platform-card p-10" data-aos="fade-up" data-aos-delay="150">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            <div class="lg:col-span-4 flex flex-col items-start space-y-4">
-                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/0yXKHcSm/Gigvora-Logo.png" alt="Gigvora logo" class="h-20 object-contain"></a>
-                                <h3 class="text-3xl font-semibold text-bw-slate">Gigvora — Freelance Marketplace &amp; Jobs Board</h3>
-                                <p class="text-slate-600">Unite talent, agencies, and employers through a powerful marketplace with real-time collaboration.</p>
-                                <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue hover:bg-bw-blue/10">Preview the Launch</a>
-                            </div>
-                            <div class="lg:col-span-8 space-y-6">
-                                <figure class="section-visual h-64">
-                                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Professionals collaborating in a modern office" class="h-full w-full object-cover" loading="lazy">
-                                </figure>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Marketplace Dynamics</p>
-                                        <p class="mt-3">Feature-rich gigs, project management, volunteer pathways, and agency oversight.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Talent Ecosystem</p>
-                                        <p class="mt-3">Experience launchpads, interviews, follows, groups, and a live feed for constant momentum.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Business Control</p>
-                                        <p class="mt-3">Budget tracking, company dashboards, and multi-team collaboration tools.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Everywhere Access</p>
-                                        <p class="mt-3">Flutter mobile application plus API endpoints for HRIS, ATS, and CRM integrations.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Fixnova -->
-                    <article class="platform-card p-10" data-aos="fade-up" data-aos-delay="200">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            <div class="lg:col-span-4 flex flex-col items-start space-y-4">
-                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/27fFjyQs/Fixnova-Logo-1.png" alt="Fixnova logo" class="h-20 object-contain"></a>
-                                <h3 class="text-3xl font-semibold text-bw-slate">Fixnova — On-Demand Services Platform</h3>
-                                <p class="text-slate-600">Deliver exceptional field services with precise zone control, resource management, and seamless customer booking.</p>
-                                <a href="#cta" class="inline-flex items-center rounded-full border border-bw-blue px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue hover:bg-bw-blue/10">Preview the Launch</a>
-                            </div>
-                            <div class="lg:col-span-8 space-y-6">
-                                <figure class="section-visual h-64">
-                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Service professional preparing tools for deployment" class="h-full w-full object-cover" loading="lazy">
-                                </figure>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-600">
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">On-Demand Core</p>
-                                        <p class="mt-3">Real-time zone tracking, intelligent scheduling, and service catalogues tailored to any market.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Operational Control</p>
-                                        <p class="mt-3">Company, provider, and servicemen management plus job allocation workflows.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Custom Workflows</p>
-                                        <p class="mt-3">Custom jobs feed, bidding and applications, and tooling/material rental coordination.</p>
-                                    </div>
-                                    <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
-                                        <p class="font-semibold text-bw-slate">Mobile Excellence</p>
-                                        <p class="mt-3">Field-ready Flutter application ensures providers and teams stay synced wherever they operate.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                        <h3 class="text-xl font-semibold text-slate-900">Integrity</h3>
+                        <p class="mt-3 text-sm text-slate-600">Transparent governance and privacy-first tooling to protect stakeholders.</p>
+                    </div>
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                        <h3 class="text-xl font-semibold text-slate-900">Discipline</h3>
+                        <p class="mt-3 text-sm text-slate-600">Structured delivery frameworks that convert strategy into launch-ready assets.</p>
+                    </div>
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                        <h3 class="text-xl font-semibold text-slate-900">Empathy</h3>
+                        <p class="mt-3 text-sm text-slate-600">Human-centred research informing each interaction, workflow, and support path.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 bg-slate-50">
+        <section id="culture" class="py-20">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="text-center" data-aos="fade-up">
-                    <span class="inline-flex items-center rounded-full bg-bw-gold/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-gold">Enterprise Delivery</span>
-                    <h2 class="mt-5 text-4xl font-semibold text-bw-slate">We build anticipation and sustain momentum.</h2>
-                    <p class="mt-4 text-lg text-slate-600">From preview roadshows to white-glove onboarding, Blackwellen ensures every stakeholder is ready for the switch-on moment.</p>
-                </div>
-
-                <figure class="section-visual mt-16" data-aos="fade-up" data-aos-delay="80">
-                    <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Immersive product presentation in a theatre-style space" loading="lazy">
-                </figure>
-
-                <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-semibold text-bw-slate">Immersive Previews</h3>
-                        <p class="mt-3 text-slate-600">Demo-ready builds, launch playbooks, and stakeholder workshops keep leadership aligned and excited.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6" data-aos="fade-right">
+                        <span class="inline-flex items-center rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Our Culture</span>
+                        <h2 class="text-3xl font-semibold text-slate-900">People-first execution</h2>
+                        <p class="text-slate-600">Cross-disciplinary squads blend design, engineering, and research to deliver portals that feel considered. We prioritise responsible innovation and clear communication.</p>
+                        <p class="text-slate-600">Every engagement includes playbooks for onboarding, governance, and sustainability to keep teams confident after launch.</p>
                     </div>
-                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl" data-aos="fade-up" data-aos-delay="150">
-                        <h3 class="text-xl font-semibold text-bw-slate">Operational Readiness</h3>
-                        <p class="mt-3 text-slate-600">Data migrations, integrations, and governance frameworks delivered with turnkey documentation.</p>
-                    </div>
-                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-semibold text-bw-slate">Momentum Marketing</h3>
-                        <p class="mt-3 text-slate-600">Launch campaigns, lifecycle messaging, and analytics ensure early wins turn into sustained growth.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline -->
-        <section id="timeline" class="py-24">
-            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-                <div class="text-center" data-aos="fade-up">
-                    <span class="inline-flex items-center rounded-full bg-bw-blue/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-bw-blue">Launch Timeline</span>
-                    <h2 class="mt-5 text-4xl font-semibold text-bw-slate">Mark the milestones—join the journey.</h2>
-                    <p class="mt-4 text-lg text-slate-600">Three platforms, staged releases, one cohesive roadmap towards a powerful Blackwellen ecosystem.</p>
-                </div>
-
-                <div class="relative mt-16 timeline">
-                    <div class="space-y-16">
-                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="50">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                <div class="md:text-right">
-                                    <h3 class="text-2xl font-semibold text-bw-slate">Q4 2024 — Edulure Early Access</h3>
-                                    <p class="mt-3 text-slate-600">Pilot programmes across universities and private academies with live classrooms and community levels activated.</p>
-                                </div>
-                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-                                    <p class="text-sm text-slate-600">Enterprise-grade onboarding, course migration services, and live instruction suites ready for deployment.</p>
-                                </div>
-                            </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="fade-left" data-aos-delay="120">
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                            <h3 class="text-lg font-semibold text-slate-900">Collaborative rituals</h3>
+                            <p class="mt-3 text-sm text-slate-600">Weekly product forums align leadership and delivery teams.</p>
                         </div>
-                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-                                    <p class="text-sm text-slate-600">Gigvora introduces a unified gig economy, corporate procurement, and talent communities in one hub.</p>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-semibold text-bw-slate">Q1 2025 — Gigvora Strategic Launch</h3>
-                                    <p class="mt-3 text-slate-600">Agency networks, companies, and headhunters gain budget management, groups, and live interview tools.</p>
-                                </div>
-                            </div>
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                            <h3 class="text-lg font-semibold text-slate-900">Continuous learning</h3>
+                            <p class="mt-3 text-sm text-slate-600">Shared knowledge bases and partner academies upskill communities.</p>
                         </div>
-                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="150">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                <div class="md:text-right">
-                                    <h3 class="text-2xl font-semibold text-bw-slate">Q2 2025 — Fixnova Global Rollout</h3>
-                                    <p class="mt-3 text-slate-600">On-demand providers launch zone-controlled operations with custom jobs feeds and resource rental.</p>
-                                </div>
-                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-                                    <p class="text-sm text-slate-600">Providers can allocate jobs to servicemen, coordinate fleets, and sync data to the Flutter mobile suite.</p>
-                                </div>
-                            </div>
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                            <h3 class="text-lg font-semibold text-slate-900">Ethical delivery</h3>
+                            <p class="mt-3 text-sm text-slate-600">Accessibility and ESG considerations embedded in each sprint.</p>
                         </div>
-                        <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-                                    <p class="text-sm text-slate-600">Unified analytics, federated login, and shared integrations create an ecosystem advantage.</p>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-semibold text-bw-slate">Q3 2025 — Blackwellen Platform Suite</h3>
-                                    <p class="mt-3 text-slate-600">All three portals synchronise into one enterprise dashboard with cross-platform insights.</p>
-                                </div>
-                            </div>
+                        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                            <h3 class="text-lg font-semibold text-slate-900">Global mindset</h3>
+                            <p class="mt-3 text-sm text-slate-600">Localised experiences ready for multinational scaling.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section id="cta" class="py-24">
-            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                <div class="cta-gradient rounded-[32px] p-12 text-center text-white shadow-2xl" data-aos="fade-up">
-                    <h2 class="text-4xl font-semibold">Reserve your Blackwellen executive preview.</h2>
-                    <p class="mt-4 text-lg text-white/90">Gain early access to product demos, architecture documentation, and strategic onboarding slots before Edulure, Gigvora, and Fixnova debut.</p>
-                    <div class="mt-8 flex flex-wrap justify-center gap-4">
-                        <a href="mailto:launch@blackwellen.com" class="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-bw-blue shadow-lg shadow-white/40 transition hover:bg-slate-100">Request a Launch Consultation</a>
-                        <a href="privacy.html" class="inline-flex items-center rounded-full border border-white/80 px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white hover:bg-white/10">Review Privacy &amp; Governance</a>
+        <section id="goals" class="py-20 bg-slate-50">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                    <span class="inline-flex items-center rounded-full bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Our Goals</span>
+                    <h2 class="mt-5 text-3xl font-semibold text-slate-900">Clarity for every stakeholder</h2>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                        <h3 class="text-xl font-semibold text-slate-900">Trusted launches</h3>
+                        <p class="mt-3 text-sm text-slate-600">Secure rollouts that give executives confidence from the first login.</p>
+                    </div>
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                        <h3 class="text-xl font-semibold text-slate-900">Measurable impact</h3>
+                        <p class="mt-3 text-sm text-slate-600">Performance dashboards aligned to business value and community health.</p>
+                    </div>
+                    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-elevated">
+                        <h3 class="text-xl font-semibold text-slate-900">Sustainable growth</h3>
+                        <p class="mt-3 text-sm text-slate-600">Future-ready infrastructure respectful of ESG commitments.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="portals" class="py-20">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-16">
+                <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                    <span class="inline-flex items-center rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Enterprise Portals</span>
+                    <h2 class="mt-5 text-3xl font-semibold text-slate-900">Portfolio shaping the professional economy</h2>
+                    <p class="mt-3 text-base text-slate-600">Each brand is engineered with modular architecture, refined user journeys, and integrated analytics.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="60">
+                    <a href="https://finova.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Visit Finova</a>
+                    <a href="https://edulure.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-800 outline-button transition">Visit Edulure</a>
+                    <a href="https://gigvora.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-800 outline-button transition">Visit Gigvora</a>
+                </div>
+
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="80">
+                    <div class="lg:col-span-5 space-y-4">
+                        <img src="https://i.ibb.co/Cp1Z0NGj/Edulure-Logo.png" alt="Edulure logo" class="h-16 w-auto">
+                        <h3 class="text-2xl font-semibold text-slate-900">Edulure</h3>
+                        <p class="text-slate-600">Immersive education portal uniting curriculum delivery, alumni networks, and credential pathways.</p>
+                        <a href="https://edulure.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Explore Edulure</a>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-elevated">
+                                <h4 class="text-lg font-semibold text-slate-900">Academic orchestration</h4>
+                                <p class="mt-2 text-sm text-slate-600">Adaptive learning, live classrooms, and accreditation workflows.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-elevated">
+                                <h4 class="text-lg font-semibold text-slate-900">Community intelligence</h4>
+                                <p class="mt-2 text-sm text-slate-600">Engagement analytics and mentorship programs guided by data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="140">
+                    <div class="lg:col-span-5 space-y-4">
+                        <img src="https://i.ibb.co/0yXKHcSm/Gigvora-Logo.png" alt="Gigvora logo" class="h-16 w-auto">
+                        <h3 class="text-2xl font-semibold text-slate-900">Gigvora</h3>
+                        <p class="text-slate-600">Enterprise marketplace for independent talent, agencies, and hiring teams.</p>
+                        <a href="https://gigvora.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Explore Gigvora</a>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-elevated">
+                                <h4 class="text-lg font-semibold text-slate-900">Marketplace governance</h4>
+                                <p class="mt-2 text-sm text-slate-600">Compliance-ready onboarding with multi-entity controls.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-elevated">
+                                <h4 class="text-lg font-semibold text-slate-900">Revenue operations</h4>
+                                <p class="mt-2 text-sm text-slate-600">Integrated billing, payout orchestration, and enterprise analytics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="200">
+                    <div class="lg:col-span-5 space-y-4">
+                        <img src="https://i.ibb.co/27fFjyQs/Fixnova-Logo-1.png" alt="Finova logo" class="h-16 w-auto">
+                        <h3 class="text-2xl font-semibold text-slate-900">Finova</h3>
+                        <p class="text-slate-600">Financial operations suite aligning advisory services, client portals, and reporting.</p>
+                        <a href="https://finova.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Explore Finova</a>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-elevated">
+                                <h4 class="text-lg font-semibold text-slate-900">Client transparency</h4>
+                                <p class="mt-2 text-sm text-slate-600">Secure dashboards, collaboration rooms, and compliance trails.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-elevated">
+                                <h4 class="text-lg font-semibold text-slate-900">Operational clarity</h4>
+                                <p class="mt-2 text-sm text-slate-600">Workflow automation and insights for finance leaders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900 text-white">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8" data-aos="fade-up">
+                <div class="max-w-2xl space-y-4">
+                    <h2 class="text-3xl font-semibold">Ready for a private briefing?</h2>
+                    <p class="text-sm text-slate-200">Share your objectives and we will align a dedicated walkthrough of the Blackwellen portal suite tailored to your stakeholders.</p>
+                </div>
+                <a href="mailto:contact@blackwellen.com" class="inline-flex items-center rounded-full border border-transparent px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-900 bg-white transition hover:bg-slate-200">
+                    Email contact@blackwellen.com
+                </a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 bg-white">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <div class="flex items-center space-x-4">
-                    <a href="https://imgbb.com/" class="flex-shrink-0" aria-label="Blackwellen Ltd" target="_blank" rel="noopener">
-                        <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen Ltd logo" class="h-12 w-auto">
-                    </a>
-                    <div>
-                        <p class="text-sm font-semibold text-bw-slate">Blackwellen Ltd</p>
-                        <p class="text-xs text-slate-500">Crafting premium digital platforms for the next wave of enterprise innovation.</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-6 text-sm text-slate-600">
-                    <a href="#vision" class="footer-link hover:text-bw-blue">Vision</a>
-                    <a href="#platforms" class="footer-link hover:text-bw-blue">Platforms</a>
-                    <a href="#experience" class="footer-link hover:text-bw-blue">Enterprise</a>
-                    <a href="#timeline" class="footer-link hover:text-bw-blue">Timeline</a>
-                    <a href="#cta" class="footer-link hover:text-bw-blue">Partner</a>
-                    <a href="privacy.html" class="footer-link hover:text-bw-blue">Privacy</a>
-                </div>
-                <div class="text-sm text-slate-500">
-                    <p>&copy; <span id="year"></span> Blackwellen Ltd. All rights reserved.</p>
-                </div>
+    <footer class="bg-white border-t border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-slate-600">
+            <div class="space-y-3">
+                <a href="/" class="inline-flex items-center space-x-3" aria-label="Blackwellen">
+                    <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-10 w-auto">
+                    <span class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Blackwellen</span>
+                </a>
+                <p class="text-slate-500">Enterprise portals and tech brands for professionals.</p>
             </div>
+            <div class="space-y-3">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-slate-900 transition">About</a></li>
+                    <li><a href="#values" class="hover:text-slate-900 transition">Values</a></li>
+                    <li><a href="#culture" class="hover:text-slate-900 transition">Culture</a></li>
+                    <li><a href="#goals" class="hover:text-slate-900 transition">Goals</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Portals</h3>
+                <ul class="space-y-2">
+                    <li><a href="https://finova.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Finova</a></li>
+                    <li><a href="https://edulure.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Edulure</a></li>
+                    <li><a href="https://gigvora.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Gigvora</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Resources</h3>
+                <ul class="space-y-2">
+                    <li><a href="/careers/" class="hover:text-slate-900 transition">Careers</a></li>
+                    <li><a href="/esg-csr/" class="hover:text-slate-900 transition">ESG &amp; CSR</a></li>
+                    <li><a href="/privacy/" class="hover:text-slate-900 transition">Privacy</a></li>
+                    <li><a href="mailto:contact@blackwellen.com" class="hover:text-slate-900 transition">contact@blackwellen.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+            &copy; <span id="year"></span> Blackwellen. All rights reserved.
         </div>
     </footer>
 
     <script>
-        AOS.init({
-            once: true,
-            duration: 900,
-            easing: 'ease-out-quart'
-        });
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
+        mobileButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        document.getElementById('year').textContent = new Date().getFullYear();
+        AOS.init({
+            duration: 700,
+            once: true,
+            easing: 'ease-out-quart'
+        });
     </script>
 </body>
 </html>
