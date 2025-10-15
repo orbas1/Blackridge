@@ -78,10 +78,21 @@
             color-scheme: light;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: #f4f4f5;
             color: #111827;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
         }
 
         .shadow-elevated {
@@ -114,6 +125,29 @@
 
         .outline-button:hover {
             background: rgba(17, 24, 39, 0.08);
+        }
+
+        .coming-soon-indicator {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, rgba(254, 249, 195, 0.95), rgba(253, 224, 71, 0.85));
+            color: #92400e;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            box-shadow: 0 16px 38px -28px rgba(146, 64, 14, 0.6);
+            white-space: nowrap;
+        }
+
+        .coming-soon-indicator--floating {
+            position: absolute;
+            top: 1.75rem;
+            right: 1.75rem;
+            z-index: 1;
         }
     </style>
 </head>
@@ -315,16 +349,29 @@
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="60">
-                    <a href="https://fixnado.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Visit Fixnado</a>
-                    <a href="https://edulure.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-800 outline-button transition">Visit Edulure</a>
-                    <a href="https://gigvora.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-800 outline-button transition">Visit Gigvora</a>
+                    <a href="https://fixnado.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full border border-transparent px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">
+                        <span class="coming-soon-indicator">Coming Soon</span>
+                        <span>Visit Fixnado</span>
+                    </a>
+                    <a href="https://edulure.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-slate-800 outline-button transition">
+                        <span class="coming-soon-indicator">Coming Soon</span>
+                        <span>Visit Edulure</span>
+                    </a>
+                    <a href="https://gigvora.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-slate-800 outline-button transition">
+                        <span class="coming-soon-indicator">Coming Soon</span>
+                        <span>Visit Gigvora</span>
+                    </a>
                 </div>
 
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="80">
+                <article class="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="80">
+                    <span class="coming-soon-indicator coming-soon-indicator--floating">Coming Soon</span>
                     <div class="lg:col-span-5 space-y-4">
                         <img src="https://i.ibb.co/Cp1Z0NGj/Edulure-Logo.png" alt="Edulure logo" class="h-16 w-auto">
                         <p class="text-slate-600">Edulure is an online learning community and course marketplace—a learn space that unites live classrooms, tutors, e-books, drip courses, assignments, and progression tracking. Instructors monetise through sales, community subscriptions, and hourly tutoring.</p>
-                        <a href="https://edulure.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Explore Edulure</a>
+                        <a href="https://edulure.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">
+                            <span class="coming-soon-indicator">Coming Soon</span>
+                            <span>Explore Edulure</span>
+                        </a>
                     </div>
                     <div class="lg:col-span-7">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -340,11 +387,15 @@
                     </div>
                 </article>
 
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="140">
+                <article class="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="140">
+                    <span class="coming-soon-indicator coming-soon-indicator--floating">Coming Soon</span>
                     <div class="lg:col-span-5 space-y-4">
                         <img src="https://i.ibb.co/0yXKHcSm/Gigvora-Logo.png" alt="Gigvora logo" class="h-16 w-auto">
                         <p class="text-slate-600">Gigvora is a professional community for freelancers, companies, agencies, headhunters, clients, mentors, volunteers, and job seekers. It offers a live feed, creation studio, dashboards, projects, gigs, and an experience launchpad with auto-matching, interviews, kanban workflows, booking calendars, and speed networking.</p>
-                        <a href="https://gigvora.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Explore Gigvora</a>
+                        <a href="https://gigvora.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">
+                            <span class="coming-soon-indicator">Coming Soon</span>
+                            <span>Explore Gigvora</span>
+                        </a>
                     </div>
                     <div class="lg:col-span-7">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -360,11 +411,15 @@
                     </div>
                 </article>
 
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="200">
+                <article class="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center section-frame p-10 lg:p-14" data-aos="fade-up" data-aos-delay="200">
+                    <span class="coming-soon-indicator coming-soon-indicator--floating">Coming Soon</span>
                     <div class="lg:col-span-5 space-y-4">
                         <img src="https://i.ibb.co/HDN65gHY/Fixnado-Logo-1.png" alt="Fixnado logo" class="h-16 w-auto">
                         <p class="text-slate-600">Fixnado is an on-demand services marketplace where people can book services and service packages, rent or buy tools, and source materials. Users, service professionals, SMEs, and enterprises operate through dedicated dashboards with zonal dispatch management, high-level analytics, and custom jobs feeds.</p>
-                        <a href="https://fixnado.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.25em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">Explore Fixnado</a>
+                        <a href="https://fixnado.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full border border-transparent px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] text-white neutral-button shadow-lg shadow-slate-900/20 transition">
+                            <span class="coming-soon-indicator">Coming Soon</span>
+                            <span>Explore Fixnado</span>
+                        </a>
                     </div>
                     <div class="lg:col-span-7">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
