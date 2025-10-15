@@ -124,11 +124,11 @@
                 <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-[7.5rem] w-auto">
             </a>
             <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-500">
-                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
-                <a href="#values" class="hover:text-slate-900 transition-colors">Values</a>
-                <a href="#culture" class="hover:text-slate-900 transition-colors">Culture</a>
-                <a href="#goals" class="hover:text-slate-900 transition-colors">Goals</a>
-                <a href="#portals" class="hover:text-slate-900 transition-colors">Portals</a>
+                <a href="/#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="/#values" class="hover:text-slate-900 transition-colors">Values</a>
+                <a href="/#culture" class="hover:text-slate-900 transition-colors">Culture</a>
+                <a href="/#goals" class="hover:text-slate-900 transition-colors">Goals</a>
+                <a href="/#portals" class="hover:text-slate-900 transition-colors">Portals</a>
                 <a href="/careers/" class="hover:text-slate-900 transition-colors">Careers</a>
                 <a href="/esg-csr/" class="hover:text-slate-900 transition-colors">ESG &amp; CSR</a>
             </div>
@@ -145,11 +145,11 @@
         </nav>
         <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white lg:hidden">
             <div class="flex flex-col space-y-4 px-4 py-6 text-sm font-semibold text-slate-600">
-                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
-                <a href="#values" class="hover:text-slate-900 transition-colors">Values</a>
-                <a href="#culture" class="hover:text-slate-900 transition-colors">Culture</a>
-                <a href="#goals" class="hover:text-slate-900 transition-colors">Goals</a>
-                <a href="#portals" class="hover:text-slate-900 transition-colors">Portals</a>
+                <a href="/#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="/#values" class="hover:text-slate-900 transition-colors">Values</a>
+                <a href="/#culture" class="hover:text-slate-900 transition-colors">Culture</a>
+                <a href="/#goals" class="hover:text-slate-900 transition-colors">Goals</a>
+                <a href="/#portals" class="hover:text-slate-900 transition-colors">Portals</a>
                 <a href="/careers/" class="hover:text-slate-900 transition-colors">Careers</a>
                 <a href="/esg-csr/" class="hover:text-slate-900 transition-colors">ESG &amp; CSR</a>
                 <a href="/privacy/" class="hover:text-slate-900 transition-colors">Privacy</a>
@@ -411,10 +411,10 @@
             <div class="space-y-3">
                 <h3 class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Company</h3>
                 <ul class="space-y-2">
-                    <li><a href="#about" class="hover:text-slate-900 transition">About</a></li>
-                    <li><a href="#values" class="hover:text-slate-900 transition">Values</a></li>
-                    <li><a href="#culture" class="hover:text-slate-900 transition">Culture</a></li>
-                    <li><a href="#goals" class="hover:text-slate-900 transition">Goals</a></li>
+                    <li><a href="/#about" class="hover:text-slate-900 transition">About</a></li>
+                    <li><a href="/#values" class="hover:text-slate-900 transition">Values</a></li>
+                    <li><a href="/#culture" class="hover:text-slate-900 transition">Culture</a></li>
+                    <li><a href="/#goals" class="hover:text-slate-900 transition">Goals</a></li>
                 </ul>
             </div>
             <div class="space-y-3">
@@ -442,14 +442,19 @@
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
 
         const mobileButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileButton && mobileMenu) {
+            mobileButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         AOS.init({
             duration: 700,

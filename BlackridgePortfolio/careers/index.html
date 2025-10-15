@@ -67,8 +67,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
         <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
             <a href="/" class="flex items-center space-x-3" aria-label="Blackwellen">
-                <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-12 w-auto">
-                <span class="text-sm font-semibold tracking-[0.35em] uppercase text-slate-500">Blackwellen</span>
+                <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-[7.5rem] w-auto">
             </a>
             <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-500">
                 <a href="/#about" class="hover:text-slate-900 transition-colors">About</a>
@@ -109,7 +108,7 @@
         </div>
     </header>
 
-    <main class="pt-24 lg:pt-28">
+    <main class="pt-36 lg:pt-40">
         <section class="bg-white py-20">
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8" data-aos="fade-up">
                 <span class="inline-flex items-center rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Careers</span>
@@ -153,10 +152,14 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-slate-600">
             <div class="space-y-3">
                 <a href="/" class="inline-flex items-center space-x-3" aria-label="Blackwellen">
-                    <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-10 w-auto">
-                    <span class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Blackwellen</span>
+                    <img src="https://i.ibb.co/XfDWpPpM/11.png" alt="Blackwellen logo" class="h-[6.25rem] w-auto">
                 </a>
-                <p class="text-slate-500">Enterprise portals and tech brands for professionals.</p>
+                <p class="text-slate-500">Designing connected professional portals with shared technology and governance.</p>
+                <div class="text-slate-500 text-xs space-y-1">
+                    <p>Blackwellen Ltd</p>
+                    <p>61 Bridge Street</p>
+                    <p>Kington, Hertfordshire HR5 3DJ</p>
+                </div>
             </div>
             <div class="space-y-3">
                 <h3 class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Company</h3>
@@ -170,7 +173,7 @@
             <div class="space-y-3">
                 <h3 class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Portals</h3>
                 <ul class="space-y-2">
-                    <li><a href="https://finova.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Finova</a></li>
+                    <li><a href="https://fixnado.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Fixnado</a></li>
                     <li><a href="https://edulure.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Edulure</a></li>
                     <li><a href="https://gigvora.com" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Gigvora</a></li>
                 </ul>
@@ -185,20 +188,26 @@
                 </ul>
             </div>
         </div>
-        <div class="border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-            &copy; <span id="year"></span> Blackwellen. All rights reserved.
+        <div class="border-t border-slate-200 py-6 text-center text-xs text-slate-400 space-y-2">
+            <p>&copy; <span id="year"></span> Blackwellen. All rights reserved.</p>
+            <p>Registered in England &amp; Wales | Companies House No. 16482166 | Registered office: 61 Bridge Street, Kington, Hertfordshire, HR5 3DJ.</p>
         </div>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
 
         const mobileButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileButton && mobileMenu) {
+            mobileButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         AOS.init({
             duration: 700,
